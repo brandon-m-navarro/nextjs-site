@@ -11,7 +11,17 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+
+        green: "rgb(129, 169, 136)",
+        greenHover: "rgb(129, 169, 136, 0.5)",
+
+        arsenic: "rgb(53, 54, 74)",
+
+        mask: "rgb(0, 0, 0, 0.25)"
       },
+      dropShadow: {
+        image: '2px 2px 4px #000'
+      }
     },
   },
   plugins: [],
