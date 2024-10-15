@@ -112,7 +112,7 @@ export default function Home() {
 
           <div className="relative group h-[50%] overflow-hidden">
             <Image
-              src="/hershey.jpg"
+              src="/hershey.JPG"
               width={339}
               height={169}
               alt="Hershey"
