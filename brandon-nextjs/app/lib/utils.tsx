@@ -1,7 +1,7 @@
-export const debounce = (fn: Function, ms = 150) => {
+export const debounceResizeListener = (fn: () => void, ms = 150) => {
     let timeoutId: ReturnType<typeof setTimeout>;
-    return function (this: any, ...args: any[]) {
+    return function (this: () => void) {
         clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => fn.apply(this, args), ms);
+        timeoutId = setTimeout(() => fn.apply(this), ms);
     };
 };

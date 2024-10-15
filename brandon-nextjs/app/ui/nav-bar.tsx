@@ -12,7 +12,7 @@ const links = [
     },
   ];
 
-  export default function NavBar ({}: {}) {
+  export default function NavBar ({isDayMode}: {isDayMode:boolean}) {
     const pathname = usePathname();
     return (
       <>
@@ -24,7 +24,9 @@ const links = [
               className={clsx(
                 'h-[42px] w-24 transition-colors box-border text-center leading-[42px] gap-6 rounded-sm bg-gray-50 text-sm font-medium text-black hover:bg-greenHover',
                 {
-                  'bg-green !text-white hover:!bg-green': pathname === link.href
+                  'bg-green !text-white hover:!bg-green': pathname === link.href,
+                  '!bg-nightPurple50': !isDayMode && pathname === link.href,
+                  'text-white bg-white20 hover:bg-nightPurple50': !isDayMode,
                 },
               )}
             >
