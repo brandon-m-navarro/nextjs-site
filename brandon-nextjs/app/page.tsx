@@ -50,7 +50,7 @@ export default function Home() {
             width={339}
             height={350}
             alt="Picture of me skydiving"
-            className="sm:min-w-[135%] sm:max-w-[135%] sm:overflow-hidden sm:translate-x-[-12%]"
+            className="sm:min-w-[145%] sm:max-w-[145%] sm:overflow-hidden sm:translate-x-[-12%]"
           />
           <span className="absolute bottom-[4px] min-w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 right-[50%] translate-x-[50%] box-border p-[4px]">Me skydiving in Swakopmund, Namibia (IQP)</span>
         </div>
