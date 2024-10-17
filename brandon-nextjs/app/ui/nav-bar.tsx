@@ -12,7 +12,7 @@ const links = [
     },
   ];
 
-  export default function NavBar ({isDayMode}: {isDayMode:boolean}) {
+  export default function NavBar () {
     const pathname = usePathname();
     return (
       <>
@@ -22,11 +22,9 @@ const links = [
               key={link.name}
               href={link.href}
               className={clsx(
-                'h-[42px] w-24 transition-colors box-border text-center leading-[42px] gap-6 rounded-sm bg-gray-50 text-sm font-medium text-black hover:bg-greenHover',
+                'h-[42px] w-24 transition-colors box-border text-center leading-[42px] gap-6 rounded-sm bg-gray-50 text-sm font-medium text-black hover:bg-greenHover dark:text-white dark:bg-white20 dark:hover:bg-nightPurple50',
                 {
-                  'bg-green !text-white hover:!bg-green': pathname === link.href,
-                  '!bg-nightPurple50': !isDayMode && pathname === link.href,
-                  'text-white bg-white20 hover:bg-nightPurple50': !isDayMode,
+                  'bg-green text-white hover:!bg-green dark:!bg-nightPurple50 ': pathname === link.href
                 },
               )}
             >

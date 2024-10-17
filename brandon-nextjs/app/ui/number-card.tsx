@@ -1,23 +1,10 @@
 'use client'
-import clsx from "clsx"
 
-export default function NumberedCard ({isDayMode, number, title, content, className} : {isDayMode:boolean, number: number, title: string, content: string, className?:string}) {
+export default function NumberedCard ({number, title, content, className} : {number: number, title: string, content: string, className?:string}) {
 
     return (
-        <div className={clsx(
-            {
-                "!text-black": isDayMode,
-            },
-            "flex flex-col transition-colors text-white" + ' ' + className,
-        )}>
-            <span
-                className={clsx(
-                    "text-dayOrange text-[28px] h-[32px]",
-                    {
-                        "!text-nightGold": !isDayMode
-                    }
-                )}
-            >
+        <div className={"flex flex-col !text-black dark:text-white transition-colors" + ' ' + className}>
+            <span className="!text-dayOrange text-[28px] h-[32px] dark:text-nightGold">
                 {number}
             </span>
             <span className="font-semibold text-[24px] whitespace-nowrap h-[32px] mb-[12px] mt-[12px]">{title}</span>

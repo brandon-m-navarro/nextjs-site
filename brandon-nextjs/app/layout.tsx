@@ -1,6 +1,12 @@
-import type { Metadata } from "next";
+'use client'
+
+//import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./ui/header";
+import { ThemeContextProvider } from "./store/ThemeContext";
+import clsx from "clsx";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,10 +19,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Brandon Navarro",
-  description: "Junior Fullstack Web Developer",
-};
+// export const metadata: Metadata = {
+//   title: "Brandon Navarro",
+//   description: "Junior Fullstack Web Developer",
+// };
 
 export default function RootLayout({
   children,
@@ -24,12 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={clsx({'dark': localStorage.getItem("theme") == 'dark'})}>
+      <ThemeContextProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <Header/>
+          <div>
+            <main>
+              {children}
+            </main>
+          </div>
+        </body>
+      </ThemeContextProvider>
     </html>
   );
 }

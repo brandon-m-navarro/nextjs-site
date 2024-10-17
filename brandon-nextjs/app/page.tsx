@@ -2,51 +2,13 @@
 
 import Image from "next/image";
 import Mountains from "./ui/mountains";
-import NavBar from "./ui/nav-bar";
-import ThemeToggle from "./ui/theme-toggle";
 import NumberedCard from "./ui/number-card";
-import { useState } from "react";
-import clsx from "clsx";
 
 export default function Home() {
 
-  const [isDayMode, setDayMode] = useState(true);
-
-    // Handle day/night mode event from ThemeToggle component
-    const modeHandler = function (event: React.SyntheticEvent<HTMLButtonElement | HTMLDivElement>) {
-
-      // Ignore events which are not fired from clicking Button
-      if (event.target instanceof HTMLButtonElement) {
-        const buttonElm = event.target as HTMLButtonElement,
-              mode = buttonElm.dataset.mode == 'day';
-        setDayMode(mode);
-        event.stopPropagation();
-      }
-  }
-
   return (
-    <div
-    className={clsx(
-      "flex flex-col transition-colors items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)] bg-white",
-      {
-        '!bg-night': !isDayMode
-      }
-    )}
-    onClick={modeHandler}>
-      <div
-      className={clsx("bg-white h-[10vh] w-full flex flex-row place-items-center",
-        {
-          '!bg-night' : !isDayMode
-        }
-      )}
-      >
-        <div className="w-[150px]"></div>
-        <div className="flex justify-around w-full">
-          <NavBar isDayMode={isDayMode}/>
-        </div>
-        <ThemeToggle/>
-      </div>
-      <Mountains isDayMode={isDayMode}>
+    <div className="!bg-white dark:bg-night flex flex-col transition-colors items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
+      <Mountains> {/* This needs this prop because className/Tailwind cant style SVG attributes */}
         <div className="absolute flex items-center justify-center top-28 left-[50%] translate-x-[-50%] w-[90%]">
           <div className="mr-8 drop-shadow-image max-w-[250px] min-w-[250px] max-h-[250px] min-h-[250px] overflow-hidden">
             <Image
@@ -67,18 +29,13 @@ export default function Home() {
         </div>
       </Mountains>
       <div className="flex justify-center flex-wrap max-w-[700px] mt-8 w-full m-auto">
-        <NumberedCard isDayMode={isDayMode} className="m-[16px] flex-1 basis-2/5" number={1} title="Research / Wireframe" content="After writing down a list of requirements to better understand the problem, I like to begin by looking for other UI's that have tackled the same or a similar problem. Then I begin drafting wireframes and mockups. These allow me to discover requirements I may have missed and gives me a resource that can better convey my ideas to my team."/>
-        <NumberedCard isDayMode={isDayMode} className="m-[16px] flex-1 basis-2/5" number={2} title="Feedback / Collaboration" content="With a wireframe in hand, I can now share with the rest of my team to further improve the design. Iteration based on team feedback leads to better designs, and helps build team cohesion by promoting a more open environment which encourages feedback."/>
-        <NumberedCard isDayMode={isDayMode} className="m-[16px] flex-1 basis-2/5" number={3} title="Refine" content="Using feedback from my team, it's time to update and further build out my wireframes to more complete prototypes."/>
-        <NumberedCard isDayMode={isDayMode} className="m-[16px] flex-1 basis-2/5" number={4} title="Experiment" content="Not everything will work, but it's worth trying if it means learning and gaining insights from what doesn't."/>
+        <NumberedCard className="m-[16px] flex-1 basis-2/5" number={1} title="Research / Wireframe" content="After writing down a list of requirements to better understand the problem, I like to begin by looking for other UI's that have tackled the same or a similar problem. Then I begin drafting wireframes and mockups. These allow me to discover requirements I may have missed and gives me a resource that can better convey my ideas to my team."/>
+        <NumberedCard className="m-[16px] flex-1 basis-2/5" number={2} title="Feedback / Collaboration" content="With a wireframe in hand, I can now share with the rest of my team to further improve the design. Iteration based on team feedback leads to better designs, and helps build team cohesion by promoting a more open environment which encourages feedback."/>
+        <NumberedCard className="m-[16px] flex-1 basis-2/5" number={3} title="Refine" content="Using feedback from my team, it's time to update and further build out my wireframes to more complete prototypes."/>
+        <NumberedCard className="m-[16px] flex-1 basis-2/5" number={4} title="Experiment" content="Not everything will work, but it's worth trying if it means learning and gaining insights from what doesn't."/>
       </div>
       <div
-      className={clsx(
-        "flex flex-col max-w-[650px] m-auto mt-[24px] mb-[48px] box-border py-[20px] transition-colors text-black",
-        {
-          "text-white": !isDayMode
-        }
-      )}
+      className="flex flex-col dark:text-white max-w-[650px] m-auto mt-[24px] mb-[48px] box-border py-[20px] transition-colors text-black"
       >
         <h1 className="text-[24px] font-medium py-[12px]">About</h1>
         <span className="text-[15px] m-auto w-[90%] mb-[12px]">{`Around the end of my Sophomore year in college, I began working at a small startup called TrampleZone. I was mainly working alongside other college kids helping improve the company's existing application HotSpots, a desktop & mobile app that leveraged OpenStreetMaps to let users rate local venues.`}</span>
