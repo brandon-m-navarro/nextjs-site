@@ -36,14 +36,14 @@ export default function Home() {
       </div>
       
       <div
-        className="flex flex-col dark:text-white sm:max-w-[700px] m-auto mt-[24px] mb-[48px] box-border p-4 sm:p-0 sm:py-[20px] w-full transition-colors text-black"
+        className="flex flex-col dark:text-white sm:max-w-[700px] m-auto mt-[24px] mb-[48px] box-border p-4 sm:py-[20px] w-full transition-colors text-black"
       >
         <h1 className="text-[24px] font-medium py-[12px]">About</h1>
         <span className="text-[15px] m-auto mb-[12px]">{`Around the end of my Sophomore year in college, I began working at a small startup called TrampleZone. I was mainly working alongside other college kids helping improve the company's existing application HotSpots, a desktop & mobile app that leveraged OpenStreetMaps to let users rate local venues.`}</span>
         <span className="text-[15px] m-auto mb-[12px]">{`A couple of months into my time there, we began developing a new app with a focus on greek life organizations called MyChapter. With the guidance of the company's founder Jim, I helped map out the expected class structure using UML diagrams and began designing and implementing the frontend. After graduating in the year of COVID, I was fortunate to get a software engineering role at TrampleZone, where I got to continue my work on MyChapter and even began testing out the service with multiple fraternities at my alma mater.`}</span>
         <span className="text-[15px] m-auto">{`Outside of work, I like to go out on walks and runs around Somerville, play in local basketball rec leagues, and go out for backpacking hikes when I'm visiting family in New Hampshire.`}</span>
       </div>
-      <div className="flex flex-col box-border p-2 sm:flex-row sm:w-[75%] sm:h-[350px] sm:min-w-[650px] m-auto justify-center">
+      <div className="flex flex-col box-border p-2 h-fit m-auto justify-center sm:flex-row sm:w-[75%] sm:h-[350px] sm:min-w-[650px]">
         <div className="relative group h-full overflow-hidden mb-4 sm:mb-0 sm:mr-8">
           <Image
             src="/skydive.png"
@@ -54,24 +54,23 @@ export default function Home() {
           />
           <span className="absolute bottom-[4px] min-w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 right-[50%] translate-x-[50%] box-border p-[4px]">Me skydiving in Swakopmund, Namibia (IQP)</span>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col h-auto">
           <div className="relative group overflow-hidden mb-4 sm:mb-[4px] sm:h-[50%]">
             <Image
               src="/Hout_Bay.JPG"
               width={339}
               height={350}
               alt="Picture of Hout Bay"
-              // className="min-w-[100%] max-w-[100%] overflow-hidden"
             />
             <span className="absolute bottom-[4px] min-w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 right-[50%] translate-x-[50%] box-border p-[4px]">The Hout Bay in Cape Town</span>
           </div>
-          <div className="relative group sm:h-[50%] overflow-hidden">
+          <div className="relative group h-auto sm:h-[50%] overflow-hidden">
             <Image
               src="/hershey.JPG"
               width={339}
               height={169}
               alt="Hershey"
-              className="min-w-[100%] max-w-[100%] translate-y-[-30%] overflow-hidden"
+              className="min-w-[100%] max-w-[100%] sm:translate-y-[-30%] overflow-hidden"
             />
             <span className="absolute bottom-[4px] min-w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 right-[50%] translate-x-[50%] box-border p-[4px]">Hershey being photogenic</span>
           </div>
