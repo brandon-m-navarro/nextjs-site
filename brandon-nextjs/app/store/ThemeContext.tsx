@@ -1,4 +1,3 @@
-// import { flushAllTraces } from "next/dist/trace";
 import { createContext, ReactElement, useEffect, useState } from "react";
 
 const ThemeContext = createContext({
@@ -29,24 +28,17 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
       } else {
         applyLight();
       }
-    //   setTheme(() => {
-    //     return theme;
-    //   });
     }
   }
 
   function applyDark(): void {
-    // console.log('dark context')
-    // setTheme('dark');
     setIsDark(true);
     document!.querySelector("body")!.classList.add("dark");
     localStorage.setItem("theme", "dark");
   }
 
   function applyLight(): void {
-    // console.log('light context')
     setIsDark(false);
-    // setTheme('light');
     document!.querySelector("body")!.classList.remove("dark");
     localStorage.setItem("theme", "light");
   }

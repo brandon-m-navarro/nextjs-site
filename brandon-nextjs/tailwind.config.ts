@@ -20,6 +20,7 @@ const config: Config = {
         arsenic: "rgb(53, 54, 74)",
 
         mask: "rgb(0, 0, 0, 0.25)",
+        maskDarker: "rgb(0, 0, 0, 0.5)",
 
         dayOrange: "#FF3205",
 
