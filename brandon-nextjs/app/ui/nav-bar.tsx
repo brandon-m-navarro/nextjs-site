@@ -5,7 +5,10 @@ import clsx from 'clsx';
 
 // Map of links to display in the top navigation.
 const links = [
-    { name: 'Home', href: '/'},
+    {
+      name: 'Home',
+      href: '/'
+    },
     {
       name: 'Resume',
       href: '/resume',
