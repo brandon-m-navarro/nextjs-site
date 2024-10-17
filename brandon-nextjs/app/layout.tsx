@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./ui/header";
 import { ThemeContextProvider } from "./store/ThemeContext";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 
 const geistSans = localFont({
@@ -30,7 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={clsx({'dark': localStorage.getItem("theme") == 'dark'})}>
+    <html lang="en" 
+    // className={clsx({'dark': localStorage.getItem("theme") == 'dark'})}
+    >
       <ThemeContextProvider>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
