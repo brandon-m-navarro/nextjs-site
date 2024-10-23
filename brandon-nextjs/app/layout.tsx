@@ -11,11 +11,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
 
 // export const metadata: Metadata = {
 //   title: "Brandon Navarro",
@@ -31,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <ThemeContextProvider>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased w-full`}>
+          className={`${geistSans.variable} antialiased w-full bg-white dark:bg-nightSoft`}>
           <Header/>
           <div>
             <main>

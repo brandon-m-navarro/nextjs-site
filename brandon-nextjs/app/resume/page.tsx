@@ -1,41 +1,542 @@
 'use client'
+import clsx from "clsx";
 import Image from "next/image";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { envelope } from '@awesome.me/kit-KIT_CODE/icons/classic/solid'
+import { useContext } from "react";
+import ThemeContext from "../store/ThemeContext";
 
+import localFont from "next/font/local";
+import SkillRating from "../ui/skill-rating";
+
+import '@/app/ui/global.css';
+
+const josefinSansLight = localFont({
+    src: "../fonts/added/jsans-light.woff",
+});
+
+const lato = localFont({
+    src: "../fonts/added/lato-regular.woff2",
+});
+const latoBold = localFont({
+    src: "../fonts/added/lato-bold.woff2",
+});
 
 export default function ResumePage() {
+
+    const {getIsDark} = useContext(ThemeContext);
+
+
   return (
-    <div className="dark:bg-nightSoft">
-        <div className="flex flex-wrap max-w-[800px] my-[12px] mx-auto box-border p-[12px] rounded-[4px] bg-white/[0.5] dark:bg-white/[0.25]">
-            <div id="Face&Title" className="mb-[12px] basis-full items-center">
-                <div>
+    <div className={`text-black dark:text-white w-full ${lato.className}`}>
+        <div className="flex flex-wrap  max-w-[800px] my-[12px] mx-auto box-border p-[12px] rounded-[4px] bg-black/[0.05] dark:bg-black/[0.25]">
+            <div id="Face&Title" className="flex mb-[12px] basis-full items-center">
+                <div className="flex overflow-hidden h-[50px] w-[50px] rounded-[4px] justify-center items-center">
                     <Image
                         src="/myface_hd.jpg"
-                        width={250}
-                        height={250}
+                        width={50}
+                        height={50}
                         alt="My Face"
+                        className="translate-y-[7px]"
                     />
                 </div>
-                <div className="flex flex-col text-left mr-auto">
-                    <span className="mb-[6px] text-[32px]">Brandon Manuel Navarro</span>
-                    <span className="">Software engineer with a focus on frontend development</span>
+                <div className="flex flex-col text-left mr-auto ml-[12px]">
+                    <span className="mb-[6px] text-[32px] leading-[36px]">Brandon Manuel Navarro</span>
+                    <span className={`${josefinSansLight.className} text-[16px] leading-[16px]`}>Software engineer with a focus on frontend development</span>
                 </div>
             </div>
-            <div className="box-border pl-[8px]">
+            <div className="pr-[8px] flex-[0.25_1_0%]">
+                <div className="flex flex-col mb-[1em]">
+                    <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50 mb-[12px]">
+                        <span className={`text-left mb-[12px] text-[14px] font-bold leading-[32px] ${latoBold}`}>CONTACT</span>
+                    </div>
+                    <div className="flex items-center py-[4px] mb-[6px] rounded-[4px]">
+                        <Image
+                            src={clsx({
+                                '/envelope-regular.png': !getIsDark(),
+                                '/envelope-regular_w.png': getIsDark()
+                            })}
+                            width={18}
+                            height={18}
+                            alt="Email Icon"
+                            className="object-contain w-[18px] h-[18px]"
+                        />
+                        <span className="ml-[8px] text-[12px]">brandon.m.navarro@gmail.com</span>
+                    </div>
+
+                    <div className="flex items-center py-[4px] mb-[6px] rounded-[4px]">
+                        <Image
+                            src={clsx({
+                                '/location-dot-solid.png': !getIsDark(),
+                                '/location-dot-solid_w.png': getIsDark()
+                            })}
+                            width={18}
+                            height={18}
+                            alt="Location Icon"
+                            className="object-contain w-[18px] h-[18px]"
+                        />
+                        <span className="ml-[8px] text-[12px]">Somerville, MA</span>
+                    </div>
+
+                    <div className="flex items-center py-[4px] mb-[6px] rounded-[4px]">
+                        <Image
+                            src={clsx({
+                                '/square-github-solid.svg': !getIsDark(),
+                                '/square-github-brands-solid_w.png': getIsDark()
+                            })}
+                            width={18}
+                            height={18}
+                            alt="GitHub Icon"
+                            className="object-contain w-[18px] h-[18px]"
+                        />
+                        <span className="ml-[8px] text-[12px] leading-[13px]">https://github.com/brandon-m-navarro</span>
+                    </div>
+
+                    <div className="flex items-center py-[4px] mb-[6px] rounded-[4px]">
+                        <Image
+                            src={clsx({
+                                '/linkedin-brands-solid.png': !getIsDark(),
+                                '/linkedin-brands-solid_w.png': getIsDark()
+                            })}
+                            width={18}
+                            height={18}
+                            alt="LinkedIn Icon"
+                            className="object-contain w-[18px] h-[18px]"
+                        />
+                        <span className="ml-[8px] text-[12px]">brandon-m-navarro</span>
+                    </div>
+                </div>
+                <div>
+                    <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50">
+                        <span className={`text-left mb-[12px] text-[14px] font-bold leading-[32px] ${latoBold.className}`}>SKILLS</span>
+                    </div>
+                    <div className="mb-[0.75em]">
+                        <span className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}>Programming</span>
+                        <div className="flex flex-col">
+                            <div className="skill-rating">
+                                <span>Javascript</span>
+                                <SkillRating
+                                    rating={4}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>HTML</span>
+                                <SkillRating
+                                    rating={4}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>CSS</span>
+                                <SkillRating
+                                    rating={4}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Java</span>
+                                <SkillRating
+                                    rating={3}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Node</span>
+                                <SkillRating
+                                    rating={3}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>PHP</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Python</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>SQL</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>C</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>C++</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="mb-[0.75em]">
+                        <span className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}>Operating Systems</span>
+                        <div className="flex flex-col">
+                            <div className="skill-rating">
+                                <span>Windows</span>
+                                <SkillRating
+                                    rating={4}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>MacOS</span>
+                                <SkillRating
+                                    rating={4}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>iOS</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Android</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mb-[0.75em]">
+                        <span className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}>Tools</span>
+                        <div className="flex flex-col">
+                            <div className="skill-rating">
+                                <span>Figma</span>
+                                <SkillRating
+                                    rating={5}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Git</span>
+                                <SkillRating
+                                    rating={4}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Adobe Premiere</span>
+                                <SkillRating
+                                    rating={3}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Android Studio</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Docker</span>
+                                <SkillRating
+                                    rating={2}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div className="flex-[0.75_1_0%] px-[4px]">
+                <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50 mb-[12px]">
+                    <span className={`${latoBold.className} text-[14px] text-left`}>EDUCATION</span>
+                </div>
+
+                <div className="flex items-center mb-[12px]">
+
+                    <div className="flex flex-col flex-[0.5_0.5_0]">
+                        <div className="flex items-center mb-[6px]">
+                            <Image
+                                src={clsx({
+                                    '/calendar-regular.png': !getIsDark(),
+                                    '/calendar-regular_w.png': getIsDark()
+                                })}
+                                width={18}
+                                height={18}
+                                alt="Calendar Icon"
+                                className="object-contain w-[18px] h-[18px]"/>
+                            <span className="text-[12px] ml-[8px]">2016 - 2020</span>
+                        </div>
+
+                        <div className="flex items-center">
+                            <Image
+                                src={clsx({
+                                    '/location-dot-solid.png': !getIsDark(),
+                                    '/location-dot-solid_w.png': getIsDark()
+                                })}
+                                width={18}
+                                height={18}
+                                alt="Location Icon"
+                                className="object-contain w-[18px] h-[18px]"/>
+                            <span className="text-[12px] ml-[8px]">Worcester, MA</span>
+                        </div>
+                    </div>
+                    <div className="flex flex-col flex-[0.5_0.5_0] items-end leading-[24px] whitespace-nowrap text-[12px]">
+
+                        <span>Bachelor of Science in Computer Science</span>
+                        <span className="italic">3.25 GPA</span>
+                    </div>
+                </div>
+
+                                {/*Campus Involvement*/}
+                <div className="flex flex-col">
+                    <span className="text-[12px]">Campus Involvement</span>
+
+                    {/* Sigma Pi */}
+                    <div className="flex flex-col">
+                        <div className="flex items-center h-[50px]">
+                            <div className="h-[34px] w-[50px] rounded-[2px] bg-white/95 overflow-hidden justify-center items-center">
+                                <Image
+                                    src={'/sigmapi_t.png'}
+                                    height={34}
+                                    width={50}
+                                    alt="Sigma Pi"
+                                    className="translate-y-[-13px]"
+
+                                />
+                            </div>
+                            <span className="text-[14px] ml-[6px]">Sigma Pi Fraternity International, Gamma Iota Chapter</span>
+                            <span className="whitespace-nowrap ml-auto italic text-[12px]">2016 - 2020</span>
+                        </div>
+                        <ul className="text-[12px] list-disc pl-[40px]">
+                            <li>Active member and former PR chair</li>
+                            <li>Was on the WebTech committee for 2 years, which made drastic improvements to our <a className="dark:text-[#faebd7] text-[#551A8B]" href="https://sigmapigammaiota.org/">chapter site</a></li>
+                            <li>Helped organize a multi-day campus event, Amazing Day, to raise awareness for mental health and suicide in the WPI community</li>
+                            <li>Volunteered weekly at a local food pantry, Mustard Seed to help setup, cook, & clean</li>
+                        </ul>
+                    </div>
+
+                    {/* SPARC */}
+                    <div className="flex flex-col mb-[1em]">
+                        <div className="flex items-center h-[50px]">
+                            <div className="h-[34px] w-[50px] rounded-[2px] bg-white/95 overflow-hidden justify-center items-center">
+                                <Image
+                                    src={'/sparc_t.png'}
+                                    height={34}
+                                    width={50}
+                                    alt="SPARC"
+                                    className="translate-y-[-8px]"
+
+                                />
+                            </div>
+                            <span className="text-[14px] ml-[6px]">SPARC Member</span>
+                            <span className="whitespace-nowrap ml-auto italic text-[12px]">2018 - 2020</span>
+                        </div>
+                        <ul className="text-[12px] list-disc pl-[40px]">
+                            <li>Was an active member of a SPARC, a student run committee that interfaced with college admins and hosted campus events to raise awareness and provide resources for sexual assualt victims in the WPI community</li>
+                            <li>Helped run the annual, campus-wide event, <a className="dark:text-[#faebd7] text-[#551A8B]" href="https://www.wpi.edu/news/take-back-night">Take Back the Night</a></li>
+                            <li>Created and distributed electronic surveys to gauge students sentiments about safety on campus which were then presented to WPI admins</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50 mb-[12px]">
+                    <span className={`${latoBold.className} text-[14px] text-left`}>Professional Experience</span>
+                </div>
+                <div className="flex mb-[6px]">
+                    <div className="flex flex-col flex-[0.5_0.5_0] justify-between">
+                        <div className="flex items-center mb-[6px]">
+                            <Image
+                                src={clsx({
+                                    '/calendar-regular.png': !getIsDark(),
+                                    '/calendar-regular_w.png': getIsDark()
+                                })}
+                                width={18}
+                                height={18}
+                                alt="Calendar Icon"
+                                className="object-contain w-[18px] h-[18px]"/>
+                            <span className="text-[12px] ml-[8px]">2018 - 2024</span>
+                        </div>
+
+                        <div className="flex items-center">
+                            <Image
+                                src={clsx({
+                                    '/location-dot-solid.png': !getIsDark(),
+                                    '/location-dot-solid_w.png': getIsDark()
+                                })}
+                                width={18}
+                                height={18}
+                                alt="Location Icon"
+                                className="object-contain w-[18px] h-[18px]"/>
+                            <span className="text-[12px] ml-[8px]">Remote / North Reading, MA</span>
+                        </div>
+                    </div>
+                    <div className="flex flex-col flex-[0.5_0.5_0] items-end leading-[24px] whitespace-nowrap text-[12px]">
+                        <span className="italic">Software Engineer II</span>
+                        <span className="italic">TrampleZone LLC.</span>
+                    </div>
+                </div>
+                <span className="text-[12px] w-[95%] m-auto text-left">Worked closely with the founder of the company in planning and developing a single page application that is available across mobile & desktop. I was involved in the initial planning for the application and created most of the model classes, UI components, and panels on the frontend. I also created promotional content and app store materials using various Adobe tools along with Figma. Throughout my time there I also trained several new hires and was involved in the recruitment process.</span>
+            </div>
+            <div className="basis-full flex flex-col">
+                <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50 mb-[12px]">
+                    <span className={`${latoBold.className} text-[14px] text-left`}>PROJECTS</span>
+                </div>
+
                 <div className="mb-[1em]">
-                    <div className="border-b-black dark:border-b-white/50">
-                        <span className="text-left mb-[12px] text-[14px] font-bold leading-[32px]">CONTACT</span>
+                    <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
+                        <span className="text-[18px] leading-[32px]">Escape (Board Game)</span>
+                        <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
+                            <Image
+                                src={clsx({
+                                    '/link-solid.png': !getIsDark(),
+                                    '/link-solid_w.png': getIsDark()
+                                })}
+                                height={20}
+                                width={16}
+                                alt="Link to Escape repo"
+                            />
+                        </div>
+                        <span className="ml-auto text-[12px]">2020</span>
+                    </div>
+                    <div className="flex">
+                        <Image
+                            src={'/escape.png'}
+                            height={70}
+                            width={80}
+                            alt="Escape"
+                        />
+                        <span className="text-[12px] ml-[24px]">
+                            Escape is a family of board games, designed for the term project of  CS4233: Object-Oriented Analysis & Design. The game is initialized using a collection of XML files to control different aspects like board dimension and shape, game pieces, victory conditions, and different battle rules. The course focused on using a TDD approach and evolutionary code design to continually add to and improve the game throughout the 7 weeks of development.
+                        </span>
+                    </div>
+                </div>
+
+                <div className="mb-[1em]">
+                    <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
+                        <span className="text-[18px] leading-[32px]">TTB Application</span>
+                        <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
+                            <Image
+                                src={clsx({
+                                    '/link-solid.png': !getIsDark(),
+                                    '/link-solid_w.png': getIsDark()
+                                })}
+                                height={20}
+                                width={16}
+                                alt="Link to TTB Repo"
+                            />
+                        </div>
+                        <span className="ml-auto text-[12px]">2018</span>
                     </div>
 
                     <div>
-                        <FontAwesomeIcon icon={envelope} />
+                        <span className="text-[12px]">Worked within a team of 8 to develop an application to aid the Alcohol and Tobacco Tax and Trade Bureau (TTB) in the submission and review process of new product applications. The class was an 7 week, intensive simulation of what it was like working in an Agile Software development team. Our team held daily standup meetings to keep an open line of communication and to delegate work. Gave a presentation at the end of the class to a panel of our professor and government officials.</span>
+                        <span className="text-[16px]">Roles and responsibilities</span>
+                        <div className="text-[14px] ml-[1em] mt-[10px]">
+                            <span className="">Documentation Analyst</span>
+                            <ul className="pl-[2em] text-[12px] list-disc">
+                                <li>Created and maintained all technical documentation including UML diagrams, sequence diagrams, training materials, and software code documentation.</li>
+                            </ul>
+                        </div>
+
+                        <div className="text-[14px] ml-[1em] mt-[10px]">
+                            <span className="">Software Engineer</span>
+                            <ul className="pl-[2em] text-[12px] list-disc">
+                                <li>Helped design and implement both the UI for the application using a mockup tool Figma</li>
+                                <li>Implemented the algorithm that was used to search through a database which contained a collection of alcohols. More specifically, I implemented a fuzzy matching search by learning and adapting a Damerau-Levenshtein approach.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div>SKills Section</div>
+
+                <div className="mb-[1em]">
+                    <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
+                        <span className="text-[18px] leading-[32px] max-w-[75%]">Active Telepresence Assistance for Supervisory Control: A User Study with a Multi-Camera Tele-Nursing Robot</span>
+                        <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
+                            <Image
+                                src={clsx({
+                                    '/link-solid.png': !getIsDark(),
+                                    '/link-solid_w.png': getIsDark()
+                                })}
+                                height={20}
+                                width={16}
+                                alt="Link to Escape repo"
+                            />
+                        </div>
+                        <span className="ml-auto text-[12px]">2019 - 2020</span>
+                    </div>
+                    <span className="text-[12px]">Worked within a team of 7 with an advisor to conduct a study which explores autonomous camera control and selection to reduce operator workload and improve task performance by designing a novel method for autonomous camera selection and control. Was involved in creating the software used in the trials, which involved streaming a live feed from a webcam to VR headset, and then reading in data from that VR headset so that a user could control a Tele-Robotic Intelligent Nursing Assistant (TRINA) robot. Also helped in the process of running ~10 participants through the study.</span>
+                    <div className="flex mt-[12px]">
+                        <Image
+                            src={'/mqp-poster.svg'}
+                            height={195}
+                            width={250}
+                            alt="MQP Poster"
+                            className="mr-[12px]"
+                        />
+                        <Image
+                            src={'/trina.png'}
+                            height={195}
+                            width={250}
+                            alt="TRINA Robot"
+                        />
+                    </div>
+                </div>
+
+                <div className="">
+                    <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
+                        <span className="text-[18px] leading-[32px] max-w-[75%]">Mathematics Tutoring Center at NUST</span>
+                        <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
+                            <Image
+                                src={clsx({
+                                    '/link-solid.png': !getIsDark(),
+                                    '/link-solid_w.png': getIsDark()
+                                })}
+                                height={20}
+                                width={16}
+                                alt="Link to Escape repo"
+                            />
+                        </div>
+                        <span className="ml-auto text-[12px]">2018 - 2019</span>
+                    </div>
+                    <span className="text-[12px] mb-[12px]">Worked within a team of 4 to create an implement e-learning modules at the Namibia University of Science and Technology (NUST). Our team worked with university staff to implement these modules in various mathematics courses as a supplemental learning tool for students. My main contributions to the project came with creating the modules as well as writing and editing the final paper. The e-learning modules were developed using a software created by a WPI professor software called ASSISTments, which I also worked on before the project.</span>
+                </div>
+
             </div>
-            <div></div>
-            <div></div>
         </div>
     </div>
   );

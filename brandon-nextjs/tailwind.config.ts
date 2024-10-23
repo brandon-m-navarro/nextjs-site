@@ -31,6 +31,12 @@ const config: Config = {
         nightPurple50: "rgba(134, 70, 124, 0.5)",
         white20: "rgba(255, 255, 255, 0.2)",
 
+        skillBackgroundLight: "rgb(141, 157, 167)",
+        skillFillLight: "rgb(11, 57, 72)",
+
+        skillBackgroundDark: "rgb(141, 157, 167)",
+        skillFillDark: "rgb(134, 70, 124)",
+
         imageTextWhite: "rgb(255, 274, 255, 0.95)",
       },
       dropShadow: {
