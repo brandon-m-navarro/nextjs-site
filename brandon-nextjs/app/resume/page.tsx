@@ -461,7 +461,11 @@ export default function ResumePage() {
 
                         <div className="flex flex-col justify-around ml-[12px]">
 
-                            <button className="flex items-center bg-night box-border p-[4px]">
+                            <button className="flex items-center dark:bg-night bg-slate-300 box-border p-[4px] pointer-events-auto"
+                                    onClick={()=> {
+                                        window?.open('https://apps.apple.com/us/app/mychapter-app-for-my-chapter/id6444417593', '_blank')?.focus()
+                                    }
+                            }>
                                 <Image
                                     src={clsx({
                                         '/apple-brands-solid.svg': !getIsDark(),
@@ -470,11 +474,16 @@ export default function ResumePage() {
                                     width={25}
                                     height={30}
                                     alt="Apple AppStore Icon"
+                                    className="pointer-events-none"
                                 />
-                                <span className="ml-[2px] flex flex-col text-[12px]"><span className="text-[6px] mr-auto">View in the</span>Apple App Store</span>
+                                <span className="ml-[6px] flex flex-col text-[12px] pointer-events-none"><span className="text-[8px] mr-auto">View in the</span>Apple App Store</span>
                             </button>
 
-                            <button className="flex items-center bg-night box-border p-[4px]">
+                            <button className="flex items-center dark:bg-night bg-slate-300 box-border p-[4px]"
+                                    onClick={()=> {
+                                        window?.open('https://play.google.com/store/apps/details?id=com.tramplezone.mychapter&hl=en_US&pli=1', '_blank')?.focus()
+                                    }
+                            }>
                                 <Image
                                     src={clsx({
                                         '/google-play-brands-solid.svg': !getIsDark(),
@@ -483,8 +492,9 @@ export default function ResumePage() {
                                     width={27}
                                     height={30}
                                     alt="Google Play Icon"
+                                    className="pointer-events-none"
                                 />
-                                <span className="ml-[2px] flex flex-col text-[12px]"><span className="text-[6px] mr-auto">View in the</span>Google Play Store</span>
+                                <span className="ml-[6px] flex flex-col text-[12px] pointer-events-none"><span className="text-[8px] mr-auto">View in the</span>Google Play Store</span>
                             </button>
                         </div>
 
