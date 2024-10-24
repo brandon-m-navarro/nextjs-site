@@ -8,6 +8,8 @@ import localFont from "next/font/local";
 import SkillRating from "../ui/skill-rating";
 
 import '@/app/ui/global.css';
+import Modal from "../ui/modal";
+
 
 const josefinSansLight = localFont({
     src: "../fonts/added/jsans-light.woff",
@@ -23,7 +25,6 @@ const latoBold = localFont({
 export default function ResumePage() {
 
     const {getIsDark} = useContext(ThemeContext);
-
 
   return (
     <div className={`text-black dark:text-white w-full ${lato.className}`}>
@@ -45,10 +46,10 @@ export default function ResumePage() {
             </div>
             <div className="pr-[8px] flex-[0.25_1_0%]">
                 <div className="flex flex-col mb-[1em]">
-                    <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50 mb-[12px]">
+                    <div className="border-b-black border-b-[1px] dark:border-b-white/50 leading-[32px] mb-[12px]">
                         <span className={`text-left mb-[12px] text-[14px] font-bold leading-[32px] ${latoBold}`}>CONTACT</span>
                     </div>
-                    <div className="flex items-center py-[4px] mb-[6px] rounded-[4px]">
+                    <div className="flex items-center p-[4px] mb-[6px] rounded-[4px]">
                         <Image
                             src={clsx({
                                 '/envelope-regular.png': !getIsDark(),
@@ -62,7 +63,7 @@ export default function ResumePage() {
                         <span className="ml-[8px] text-[12px]">brandon.m.navarro@gmail.com</span>
                     </div>
 
-                    <div className="flex items-center py-[4px] mb-[6px] rounded-[4px]">
+                    <div className="flex items-center p-[4px] mb-[6px] rounded-[4px]">
                         <Image
                             src={clsx({
                                 '/location-dot-solid.png': !getIsDark(),
@@ -76,33 +77,42 @@ export default function ResumePage() {
                         <span className="ml-[8px] text-[12px]">Somerville, MA</span>
                     </div>
 
-                    <div className="flex items-center py-[4px] mb-[6px] rounded-[4px]">
-                        <Image
-                            src={clsx({
-                                '/square-github-solid.svg': !getIsDark(),
-                                '/square-github-brands-solid_w.png': getIsDark()
-                            })}
-                            width={18}
-                            height={18}
-                            alt="GitHub Icon"
-                            className="object-contain w-[18px] h-[18px]"
-                        />
-                        <span className="ml-[8px] text-[12px] leading-[13px]">https://github.com/brandon-m-navarro</span>
-                    </div>
+                    <button
+                        className="hover:bg-white/20 cursor-pointer transition-colors p-[4px] rounded-[4px]"
+                        onClick={()=> {window?.open('https://github.com/brandon-m-navarro', '_blank')?.focus()}}>
+                        <div className="flex items-center">
+                            <Image
+                                src={clsx({
+                                    '/square-github-solid.svg': !getIsDark(),
+                                    '/square-github-brands-solid_w.png': getIsDark()
+                                })}
+                                width={18}
+                                height={18}
+                                alt="GitHub Icon"
+                                className="object-contain w-[18px] h-[18px]"
+                            />
+                            <span className="ml-[8px] text-[12px] leading-[13px] text-left">https://github.com/brandon-m-navarro</span>
+                        </div>
+                    </button>
 
-                    <div className="flex items-center py-[4px] mb-[6px] rounded-[4px]">
-                        <Image
-                            src={clsx({
-                                '/linkedin-brands-solid.png': !getIsDark(),
-                                '/linkedin-brands-solid_w.png': getIsDark()
-                            })}
-                            width={18}
-                            height={18}
-                            alt="LinkedIn Icon"
-                            className="object-contain w-[18px] h-[18px]"
-                        />
-                        <span className="ml-[8px] text-[12px]">brandon-m-navarro</span>
-                    </div>
+                    <button
+                        className="hover:bg-white/20 cursor-pointer transition-colors p-[4px] rounded-[4px]"
+                        onClick={()=> {window?.open('https://www.linkedin.com/in/brandon-navarro-b36b97149/', '_blank')?.focus()}}>
+                        <div className="flex items-center">
+                            <Image
+                                src={clsx({
+                                    '/linkedin-brands-solid.png': !getIsDark(),
+                                    '/linkedin-brands-solid_w.png': getIsDark()
+                                })}
+                                width={18}
+                                height={18}
+                                alt="LinkedIn Icon"
+                                className="object-contain w-[18px] h-[18px]"
+                            />
+                            <span className="ml-[8px] text-[12px]">brandon-m-navarro</span>
+                        </div>
+                    </button>
+
                 </div>
                 <div>
                     <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50">
@@ -449,7 +459,7 @@ export default function ResumePage() {
                     </div>
                 </div>
                 <div className="flex flex-col">
-                    <span className="text-[12px] w-[95%] m-auto text-left">Worked closely with the founder of the company in planning and developing a single page application that is available across mobile & desktop. I was involved in the initial planning for the application and created most of the model classes, UI components, and panels on the frontend. I also created promotional content and app store materials using various Adobe tools along with Figma. Throughout my time there I also trained several new hires and was involved in the recruitment process.</span>
+                    <span className="text-[12px] w-[95%] m-auto text-left">Worked closely with the founder of the company in planning and developing a single page application that is currently available across mobile and desktop. I was involved in the initial planning for the application and created most of the model classes, UI components, and panels on the frontend. I also created promotional content and app store materials using various Adobe tools along with Figma. Throughout my time there I also trained several new hires and was involved in the recruitment process.</span>
                     <div className="flex mt-[12px] ml-[12px]">
                         <Image
                             src={'/mychapter.png'}
@@ -507,21 +517,28 @@ export default function ResumePage() {
                 </div>
 
                 <div className="mb-[1em]">
-                    <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
-                        <span className="text-[18px] leading-[32px]">Escape (Board Game)</span>
-                        <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
-                            <Image
-                                src={clsx({
-                                    '/link-solid.png': !getIsDark(),
-                                    '/link-solid_w.png': getIsDark()
-                                })}
-                                height={20}
-                                width={16}
-                                alt="Link to Escape repo"
-                            />
+                    <button
+                        className="w-full"
+                        onClick={()=> {
+                            window?.open('https://github.com/brandon-m-navarro/escape/tree/master', '_blank')?.focus()
+                        }}
+                    >
+                        <div className="flex flex-nowrap items-center mb-[6px] cursor-pointer">
+                            <span className="text-[18px] leading-[32px]">Escape (Board Game)</span>
+                            <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
+                                <Image
+                                    src={clsx({
+                                        '/link-solid.png': !getIsDark(),
+                                        '/link-solid_w.png': getIsDark()
+                                    })}
+                                    height={20}
+                                    width={16}
+                                    alt="Link to Escape repo"
+                                />
+                            </div>
+                            <span className="ml-auto text-[12px]">2020</span>
                         </div>
-                        <span className="ml-auto text-[12px]">2020</span>
-                    </div>
+                    </button>
                     <div className="flex">
                         <Image
                             src={'/escape.png'}
@@ -536,21 +553,28 @@ export default function ResumePage() {
                 </div>
 
                 <div className="mb-[1em]">
-                    <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
-                        <span className="text-[18px] leading-[32px]">TTB Application</span>
-                        <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
-                            <Image
-                                src={clsx({
-                                    '/link-solid.png': !getIsDark(),
-                                    '/link-solid_w.png': getIsDark()
-                                })}
-                                height={20}
-                                width={16}
-                                alt="Link to TTB Repo"
-                            />
+                    <button
+                        className="w-full"
+                        onClick={()=> {
+                            window?.open('https://github.com/Benmw99/TeamE3733TTB2', '_blank')?.focus()
+                        }}
+                    >
+                        <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
+                            <span className="text-[18px] leading-[32px]">TTB Application</span>
+                            <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
+                                <Image
+                                    src={clsx({
+                                        '/link-solid.png': !getIsDark(),
+                                        '/link-solid_w.png': getIsDark()
+                                    })}
+                                    height={20}
+                                    width={16}
+                                    alt="Link to TTB Repo"
+                                />
+                            </div>
+                            <span className="ml-auto text-[12px]">2018</span>
                         </div>
-                        <span className="ml-auto text-[12px]">2018</span>
-                    </div>
+                    </button>
 
                     <div className="flex flex-col">
                         <span className="text-[12px]">Worked within a team of 8 to develop an application to aid the Alcohol and Tobacco Tax and Trade Bureau (TTB) in the submission and review process of new product applications. The class was an 7 week, intensive simulation of what it was like working in an Agile Software development team. Our team held daily standup meetings to keep an open line of communication and to delegate work. Gave a presentation at the end of the class to a panel of our professor and government officials.</span>
@@ -565,38 +589,61 @@ export default function ResumePage() {
                         <div className="text-[14px] ml-[1em] mt-[10px]">
                             <span className="">Software Engineer</span>
                             <ul className="pl-[2em] text-[12px] list-disc">
-                                <li>Helped design and implement both the UI for the application using a mockup tool Figma</li>
-                                <li>Implemented the algorithm that was used to search through a database which contained a collection of alcohols. More specifically, I implemented a fuzzy matching search by learning and adapting a Damerau-Levenshtein approach.</li>
+                                <li>Helped design the UI for the application using a mockup tool Figma.</li>
+                                <li>Helped implement the designed UI using JavaFX and FXML (an XML-based markup language for constructing Java object graphs).</li>
+                                <li>Implemented the algorithm that was used to search through a database seeded with a collection of alcohols. The fuzzy search I implemented adapted the Damerau-Levenshtein approach and ran in O(n*m) time.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div className="mb-[1em] flex flex-col">
-                    <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
-                        <span className="text-[18px] leading-[32px] max-w-[75%]">Active Telepresence Assistance for Supervisory Control: A User Study with a Multi-Camera Tele-Nursing Robot</span>
-                        <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
-                            <Image
-                                src={clsx({
-                                    '/link-solid.png': !getIsDark(),
-                                    '/link-solid_w.png': getIsDark()
-                                })}
-                                height={20}
-                                width={16}
-                                alt="Link to Escape repo"
-                            />
+
+                    <button
+                        className="w-full text-left"
+                        onClick={()=> {
+                            window?.open('https://digital.wpi.edu/concern/student_works/rf55zb37d?locale=en', '_blank')?.focus()
+                        }}
+                    >
+                        <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
+                            <span className="text-[18px] leading-[32px] max-w-[75%]">Active Telepresence Assistance for Supervisory Control: A User Study with a Multi-Camera Tele-Nursing Robot</span>
+                            <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
+                                <Image
+                                    src={clsx({
+                                        '/link-solid.png': !getIsDark(),
+                                        '/link-solid_w.png': getIsDark()
+                                    })}
+                                    height={20}
+                                    width={16}
+                                    alt="Link to Escape repo"
+                                />
+                            </div>
+                            <span className="ml-auto text-[12px]">2019 - 2020</span>
                         </div>
-                        <span className="ml-auto text-[12px]">2019 - 2020</span>
-                    </div>
-                    <span className="text-[12px]">Worked within a team of 7 with an advisor to conduct a study which explores autonomous camera control and selection to reduce operator workload and improve task performance by designing a novel method for autonomous camera selection and control. Was involved in creating the software used in the trials, which involved streaming a live feed from a webcam to VR headset, and then reading in data from that VR headset so that a user could control a Tele-Robotic Intelligent Nursing Assistant (TRINA) robot. Also helped in the process of running ~10 participants through the study.</span>
+                    </button>
+
+                    <span className="text-[12px]">Worked within a team of 7 with an advisor to conduct a study which explored autonomous camera control and selection on a TRINA robot using a VR headset. Was involved in creating the software used to control the cameras by reading the inertial measurement unit (IMU) data from the VR headset using Unity and GStreamer library. Using C++ and Python scripts to interface with <a className="underline" href="https://wiki.ros.org/ROS/Introduction">ROS</a>, our team was able to control TRINAs arms and main camera using the VR headset and controllers. Also helped in running ~10 participants through the study.</span>
                     <div className="flex mt-[12px]">
-                        <Image
-                            src={'/mqp-poster.svg'}
-                            height={195}
-                            width={250}
-                            alt="MQP Poster"
-                            className="mr-[12px]"
-                        />
+                        <Modal
+                            title="MQP Poster"
+                            content={
+                                <Image
+                                    src={'/mqp-poster.svg'}
+                                    height={641}
+                                    width={500}
+                                    alt="MQP Poster"
+                                    className="max-w-[600px] min-w-[275px]"
+                                />
+                            }
+                        >
+                            <Image
+                                src={'/mqp-poster.svg'}
+                                height={195}
+                                width={250}
+                                alt="MQP Poster"
+                                className="mr-[12px] pointer-events-none max-w-[250px]"
+                            />
+                        </Modal>
                         <Image
                             src={'/trina.png'}
                             height={195}
@@ -607,24 +654,36 @@ export default function ResumePage() {
                 </div>
 
                 <div className="flex flex-col">
-                    <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
-                        <span className="text-[18px] leading-[32px] max-w-[75%]">Mathematics Tutoring Center at NUST</span>
-                        <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
-                            <Image
-                                src={clsx({
-                                    '/link-solid.png': !getIsDark(),
-                                    '/link-solid_w.png': getIsDark()
-                                })}
-                                height={20}
-                                width={16}
-                                alt="Link to Escape repo"
-                            />
+                    <button
+                        className="w-full"
+                        onClick={()=> {
+                            window?.open('https://digital.wpi.edu/concern/student_works/x633f145v?locale=en', '_blank')?.focus()
+                        }}
+                    >
+                        <div className="flex flex-nowrap items-center mb-[6px] cursor-pointer">
+                            <span className="text-[18px] leading-[32px] max-w-[75%]">Mathematics Tutoring Center at NUST</span>
+                            <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
+                                <Image
+                                    src={clsx({
+                                        '/link-solid.png': !getIsDark(),
+                                        '/link-solid_w.png': getIsDark()
+                                    })}
+                                    height={20}
+                                    width={16}
+                                    alt="Link to Escape repo"
+                                />
+                            </div>
+                            <span className="ml-auto text-[12px]">2018 - 2019</span>
                         </div>
-                        <span className="ml-auto text-[12px]">2018 - 2019</span>
-                    </div>
-                    <span className="text-[12px] mb-[12px]">Worked within a team of 4 to create an implement e-learning modules at the Namibia University of Science and Technology (NUST). Our team worked with university staff to implement these modules in various mathematics courses as a supplemental learning tool for students. My main contributions to the project came with creating the modules as well as writing and editing the final paper. The e-learning modules were developed using a software created by a WPI professor software called ASSISTments, which I also worked on before the project.</span>
+                    </button>
+                    <span className="text-[12px] mb-[12px]">Worked within a team of 4 to create and implement e-learning modules at the Namibia University of Science and Technology (NUST). Our team worked with university staff to test these modules in various mathematics courses as a supplemental learning tool for students. My main contributions to the project were creating the modules as well as writing and editing the final paper. The e-learning modules were developed using a software created by a WPI professor (ASSISTments), which I also worked with before the project.</span>
+                    <Image
+                        src={'/iqp_team_sm.png'}
+                        width={250}
+                        height={187}
+                        alt="My team members, sponsors, and I eating cake"
+                    />
                 </div>
-
             </div>
         </div>
     </div>

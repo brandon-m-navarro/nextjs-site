@@ -4,7 +4,7 @@ import { debounceResizeListener } from '../lib/utils';
 import clsx from 'clsx';
 import ThemeContext from '../store/ThemeContext';
 
-export default function Mountains({children} : {children?:React.ReactNode;}) {
+export default function Mountains({children} : {children?:React.ReactNode}) {
 
     const {getIsDark} = useContext(ThemeContext);
 
