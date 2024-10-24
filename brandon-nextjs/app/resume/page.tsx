@@ -234,6 +234,44 @@ export default function ResumePage() {
                     </div>
 
                     <div className="mb-[0.75em]">
+                        <span className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}>Frameworks</span>
+                        <div className="flex flex-col">
+                            <div className="skill-rating">
+                                <span>Require.js</span>
+                                <SkillRating
+                                    rating={4}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Tailwind</span>
+                                <SkillRating
+                                    rating={4}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>React</span>
+                                <SkillRating
+                                    rating={3}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                            <div className="skill-rating">
+                                <span>Next.js</span>
+                                <SkillRating
+                                    rating={3}
+                                    backgroundColor={clsx({"bg-skillBackgroundLight": !getIsDark(), "bg-skillBackgroundDark": getIsDark()})}
+                                    fillColor={clsx({"bg-skillFillLight": !getIsDark(), "bg-skillFillDark": getIsDark()})}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mb-[0.75em]">
                         <span className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}>Tools</span>
                         <div className="flex flex-col">
                             <div className="skill-rating">
@@ -410,7 +448,48 @@ export default function ResumePage() {
                         <span className="italic">TrampleZone LLC.</span>
                     </div>
                 </div>
-                <span className="text-[12px] w-[95%] m-auto text-left">Worked closely with the founder of the company in planning and developing a single page application that is available across mobile & desktop. I was involved in the initial planning for the application and created most of the model classes, UI components, and panels on the frontend. I also created promotional content and app store materials using various Adobe tools along with Figma. Throughout my time there I also trained several new hires and was involved in the recruitment process.</span>
+                <div className="flex flex-col">
+                    <span className="text-[12px] w-[95%] m-auto text-left">Worked closely with the founder of the company in planning and developing a single page application that is available across mobile & desktop. I was involved in the initial planning for the application and created most of the model classes, UI components, and panels on the frontend. I also created promotional content and app store materials using various Adobe tools along with Figma. Throughout my time there I also trained several new hires and was involved in the recruitment process.</span>
+                    <div className="flex mt-[12px] ml-[12px]">
+                        <Image
+                            src={'/mychapter.png'}
+                            height={115}
+                            width={167}
+                            alt="MyChapter Logo & Text"
+                            className="bg-white/95 rounded-sm"
+                        />
+
+                        <div className="flex flex-col justify-around ml-[12px]">
+
+                            <button className="flex items-center bg-night box-border p-[4px]">
+                                <Image
+                                    src={clsx({
+                                        '/apple-brands-solid.svg': !getIsDark(),
+                                        '/apple-brands-solid_w.svg': getIsDark()
+                                    })}
+                                    width={25}
+                                    height={30}
+                                    alt="Apple AppStore Icon"
+                                />
+                                <span className="ml-[2px] flex flex-col text-[12px]"><span className="text-[6px] mr-auto">View in the</span>Apple App Store</span>
+                            </button>
+
+                            <button className="flex items-center bg-night box-border p-[4px]">
+                                <Image
+                                    src={clsx({
+                                        '/google-play-brands-solid.svg': !getIsDark(),
+                                        '/google-play-brands-solid_w.svg': getIsDark()
+                                    })}
+                                    width={27}
+                                    height={30}
+                                    alt="Google Play Icon"
+                                />
+                                <span className="ml-[2px] flex flex-col text-[12px]"><span className="text-[6px] mr-auto">View in the</span>Google Play Store</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
             <div className="basis-full flex flex-col">
                 <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50 mb-[12px]">
@@ -463,9 +542,9 @@ export default function ResumePage() {
                         <span className="ml-auto text-[12px]">2018</span>
                     </div>
 
-                    <div>
+                    <div className="flex flex-col">
                         <span className="text-[12px]">Worked within a team of 8 to develop an application to aid the Alcohol and Tobacco Tax and Trade Bureau (TTB) in the submission and review process of new product applications. The class was an 7 week, intensive simulation of what it was like working in an Agile Software development team. Our team held daily standup meetings to keep an open line of communication and to delegate work. Gave a presentation at the end of the class to a panel of our professor and government officials.</span>
-                        <span className="text-[16px]">Roles and responsibilities</span>
+                        <span className="text-[16px] mt-[12px]">Roles and responsibilities</span>
                         <div className="text-[14px] ml-[1em] mt-[10px]">
                             <span className="">Documentation Analyst</span>
                             <ul className="pl-[2em] text-[12px] list-disc">
@@ -483,7 +562,7 @@ export default function ResumePage() {
                     </div>
                 </div>
 
-                <div className="mb-[1em]">
+                <div className="mb-[1em] flex flex-col">
                     <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
                         <span className="text-[18px] leading-[32px] max-w-[75%]">Active Telepresence Assistance for Supervisory Control: A User Study with a Multi-Camera Tele-Nursing Robot</span>
                         <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
@@ -517,7 +596,7 @@ export default function ResumePage() {
                     </div>
                 </div>
 
-                <div className="">
+                <div className="flex flex-col">
                     <div className="flex flex-nowrap items-center mb-[6px]  cursor-pointer">
                         <span className="text-[18px] leading-[32px] max-w-[75%]">Mathematics Tutoring Center at NUST</span>
                         <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
