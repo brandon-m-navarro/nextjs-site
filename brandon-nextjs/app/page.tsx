@@ -20,11 +20,7 @@ export default function Home() {
             />
           </div>
           <span className="select-none text-[clamp(1rem, .8852rem + .4898vw, 1.375rem)] max-w-screen-md p-1 bg-maskDarker sm:bg-mask text-center rounded">
-            {`My name is Brandon. Im a software engineer looking to expand my knowledge in a
-            close-knit, team environment. I've previously worked at a small startup developing
-            a mobile/web application called MyChapter. My work was primarily focused on frontend
-            development, but I'm always looking to learn about new frameworks, languages, and any
-            other technology under the sun.`}
+            {`Welcome to the same site, except built using React & Next.js! Thanks for stopping by!`}
           </span>
         </div>
       </Mountains>

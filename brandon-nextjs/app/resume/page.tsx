@@ -486,7 +486,7 @@ export default function ResumePage() {
                                     alt="Apple AppStore Icon"
                                     className="pointer-events-none"
                                 />
-                                <span className="ml-[6px] flex flex-col text-[12px] pointer-events-none"><span className="text-[8px] mr-auto">View in the</span>Apple App Store</span>
+                                <span className="ml-[6px] flex flex-col text-[12px] pointer-events-none"><span className="text-[8px] mr-auto">View in the</span>App Store</span>
                             </button>
 
                             <button className="flex items-center dark:bg-night bg-slate-300 box-border p-[4px]"
