@@ -40,11 +40,11 @@ export default function ResumePage() {
                     />
                 </div>
                 <div className="flex flex-col text-left mr-auto ml-[12px]">
-                    <span className="mb-[6px] text-[32px] leading-[36px]">Brandon Manuel Navarro</span>
+                    <span className="mb-[6px] text-[32px] leading-[36px] max-[436px]:text-[24px]">Brandon Manuel Navarro</span>
                     <span className={`${josefinSansLight.className} text-[16px] leading-[16px]`}>Software engineer with a focus on frontend development</span>
                 </div>
             </div>
-            <div className="pr-[8px] flex-[0.25_1_0%]">
+            <div className="pr-[8px] flex-[1_1_100%] md:flex-[0.25_1_0%]">
                 <div className="flex flex-col mb-[1em]">
                     <div className="border-b-black border-b-[1px] dark:border-b-white/50 leading-[32px] mb-[12px]">
                         <span className={`text-left mb-[12px] text-[14px] font-bold leading-[32px] ${latoBold}`}>CONTACT</span>
@@ -329,7 +329,7 @@ export default function ResumePage() {
 
                 </div>
             </div>
-            <div className="flex-[0.75_1_0%] px-[4px]">
+            <div className="flex-[1_1_100%] md:flex-[0.75_1_0%] px-[4px]">
                 <div className="border-b-black border-b-[1px] dark:border-b-white leading-[32px] dark:border-b-white/50 mb-[12px]">
                     <span className={`${latoBold.className} text-[14px] text-left`}>EDUCATION</span>
                 </div>
@@ -460,7 +460,7 @@ export default function ResumePage() {
                 </div>
                 <div className="flex flex-col">
                     <span className="text-[12px] w-[95%] m-auto text-left">Worked closely with the founder of the company in planning and developing a single page application that is currently available across mobile and desktop. I was involved in the initial planning for the application and created most of the model classes, UI components, and panels on the frontend. I also created promotional content and app store materials using various Adobe tools along with Figma. Throughout my time there I also trained several new hires and was involved in the recruitment process.</span>
-                    <div className="flex mt-[12px] ml-[12px]">
+                    <div className="flex mt-[12px] ml-[12px] mb-[12px] md:mb-0">
                         <Image
                             src={'/mychapter.png'}
                             height={115}
@@ -545,6 +545,7 @@ export default function ResumePage() {
                             height={70}
                             width={80}
                             alt="Escape"
+                            className="max-h-[70px]"
                         />
                         <span className="text-[12px] ml-[24px]">
                             Escape is a family of board games, designed for the term project of  CS4233: Object-Oriented Analysis & Design. The game is initialized using a collection of XML files to control different aspects like board dimension and shape, game pieces, victory conditions, and different battle rules. The course focused on using a TDD approach and evolutionary code design to continually add to and improve the game throughout the 7 weeks of development.
@@ -649,6 +650,7 @@ export default function ResumePage() {
                             height={195}
                             width={250}
                             alt="TRINA Robot"
+                            className="hidden sm:block"
                         />
                     </div>
                 </div>
@@ -661,7 +663,7 @@ export default function ResumePage() {
                         }}
                     >
                         <div className="flex flex-nowrap items-center mb-[6px] cursor-pointer">
-                            <span className="text-[18px] leading-[32px] max-w-[75%]">Mathematics Tutoring Center at NUST</span>
+                            <span className="text-[18px] leading-[32px] max-w-[75%] text-left">Mathematics Tutoring Center at NUST</span>
                             <div className="h-[42px] w-[42px] flex items-center justify-center ml-[12px]">
                                 <Image
                                     src={clsx({

@@ -18,11 +18,13 @@ export default function Modal({title, content, children} : {title:string, conten
         setModal(!modal);
     };
 
-  if(modal) {
-    document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
+    if (typeof window !== "undefined") {
+        if (modal) {
+            window.document.body.classList.add('active-modal')
+        } else {
+            window.document.body.classList.remove('active-modal')
+        }
+    }
 
   return (
     <>

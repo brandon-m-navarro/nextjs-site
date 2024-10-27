@@ -9,6 +9,7 @@ const config: Config = {
   important: true,
   darkMode: 'selector',
   theme: {
+
     extend: {
       colors: {
         background: "var(--background)",
