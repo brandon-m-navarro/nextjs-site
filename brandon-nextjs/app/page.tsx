@@ -20,7 +20,7 @@ export default function Home() {
             />
           </div>
           <span className="select-none text-[clamp(1rem, .8852rem + .4898vw, 1.375rem)] max-w-screen-md p-1 bg-maskDarker sm:bg-mask text-center rounded">
-            {`Welcome to the same site, except built using React & Next.js! Thanks for stopping by!`}
+            {`Welcome to the same site, except built using React, Next.js, and Tailwind! Thanks for stopping by!`}
           </span>
         </div>
       </Mountains>
