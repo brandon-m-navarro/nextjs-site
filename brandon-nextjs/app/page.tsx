@@ -19,7 +19,7 @@ export default function Home() {
                   className="min-w-[135%] max-w-[135%] translate-x-[-12%] translate-y-[1%]"
             />
           </div>
-          <span className="select-none text-[clamp(1rem, .8852rem + .4898vw, 1.375rem)] max-w-screen-md p-1 bg-maskDarker sm:bg-mask text-center rounded">
+          <span className="select-none text-[clamp(1rem, .8852rem + .4898vw, 1.375rem)] max-w-screen-md p-1 bg-maskDarker sm:bg-mask text-center rounded text-white">
             {`Welcome to the same site, except built using React, Next.js, and Tailwind! Thanks for stopping by!`}
           </span>
         </div>
