@@ -16,7 +16,7 @@ import Image from 'next/image';
     // Map of links to display in the top navigation.
     const links = [
         {
-          name: 'Home',
+          name: 'About',
           href: '/',
           icon: !getIsDark() ? '/house-solid.svg' : '/house-solid_w.svg',
           icon_w: '/house-solid_w.svg'
