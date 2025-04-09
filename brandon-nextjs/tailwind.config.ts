@@ -24,13 +24,13 @@ const config: Config = {
         maskDarker: "rgb(0, 0, 0, 0.5)",
 
         dayOrange: "#FF3205",
+        white20: "rgba(255, 255, 255, 0.2)",
 
         nightGold: "rgba(255, 239, 203, 1)",
         night: "#020916",
         nightSoft: "rgb(53, 54, 74)",
         nightPurple: "#86467C",
         nightPurple50: "rgba(134, 70, 124, 0.5)",
-        white20: "rgba(255, 255, 255, 0.2)",
 
         skillBackgroundLight: "rgb(141, 157, 167)",
         skillFillLight: "rgb(11, 57, 72)",
