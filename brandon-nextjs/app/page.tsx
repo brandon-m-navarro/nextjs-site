@@ -7,7 +7,7 @@ import NumberedCard from "./ui/number-card";
 export default function Home() {
 
   return (
-    <div className="!bg-white dark:bg-night flex flex-col transition-colors items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="bg-white dark:bg-night flex flex-col transition-colors items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
       <Mountains>
         <div className="absolute flex flex-col sm:flex-row items-center justify-center top-10 sm:top-28 left-[50%] translate-x-[-50%] w-[90%]">
           <div className="sm:mr-8 drop-shadow-image max-w-[250px] min-w-[250px] max-h-[250px] min-h-[250px] overflow-hidden">

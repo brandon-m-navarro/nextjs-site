@@ -27,7 +27,7 @@ export default function ResumePage() {
     const {getIsDark} = useContext(ThemeContext);
 
   return (
-    <div className={`text-black dark:text-white w-full ${lato.className}`}>
+    <div className={`text-black dark:text-white w-full dark:bg-nightSoft py-1 ${lato.className}`}>
         <div className="flex flex-wrap  max-w-[800px] my-[12px] mx-auto box-border p-[12px] rounded-[4px] bg-black/[0.05] dark:bg-black/[0.25]">
             <div id="Face&Title" className="flex mb-[12px] basis-full items-center">
                 <div className="flex overflow-hidden h-[50px] w-[50px] rounded-[4px] justify-center items-center">

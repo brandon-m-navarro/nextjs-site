@@ -7,7 +7,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   important: true,
-  darkMode: 'selector',
+  darkMode: 'class',
   theme: {
 
     extend: {

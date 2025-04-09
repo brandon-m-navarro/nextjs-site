@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <ThemeContextProvider>
         <body
-          className={`${geistSans.variable} antialiased w-full bg-white dark:bg-nightSoft select-none`}>
+          className={`${geistSans.variable} antialiased w-full bg-white select-none`}>
           <Header/>
           <div>
             <main>
