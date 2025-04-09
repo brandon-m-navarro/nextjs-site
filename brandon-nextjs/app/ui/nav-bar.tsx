@@ -39,7 +39,7 @@ import Image from 'next/image';
               className={clsx(
                 'min-[475px]:h-[42px] w-fit p-[12px] min-[475px]:p-0 min-[475px]:w-24 transition-all box-border text-center leading-[42px] rounded-sm text-sm font-medium text-black bg-gray-500/15 dark:text-white dark:bg-white20 hover:opacity-75',
                 {
-                  'bg-green/100 dark:!bg-nightPurple text-white pointer-events-none': pathname === link.href
+                  'bg-green/100 dark:bg-nightPurple/100 text-white pointer-events-none': pathname === link.href
                 },
               )}
             >
