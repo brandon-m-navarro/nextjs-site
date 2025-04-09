@@ -13,8 +13,6 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
         function handleResize() {
 
             const pathGroup = window.document.getElementById('paths');
-            // console.log(pathGroup)
-            console.log(window.innerWidth / 9)
             if (typeof pathGroup !== 'undefined' && pathGroup !== null) {
                 pathGroup.style.transform = 'scaleX(' + window.innerWidth / 9 + '%)';
             }
@@ -35,11 +33,11 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
         <div className='relative w-full'>
             <div>{children}</div>
             <div>
-                <svg id="visual" viewBox="0 0" width='auto' height="600">
+                <svg id="visual" width='100%' height="600">
 
                     <defs>
                     <filter id="sunMoon" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                         <feOffset dx="-4" dy="-4"/>
                             <feGaussianBlur stdDeviation="10"/>
@@ -63,7 +61,7 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
                         fill={clsx(
                             {
                                 "#FB532C": !getIsDark(),
-                                "#35364A": getIsDark()
+                                "transparent": getIsDark()
                             }
                         )}>
                     </rect>
