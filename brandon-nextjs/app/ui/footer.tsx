@@ -3,14 +3,14 @@
 import clsx from "clsx"
 import ThemeToggle from "./theme-toggle"
 import Image from "next/image"
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import ThemeContext from "../store/ThemeContext";
 import { copyTextToClipboard } from "../lib/utils"
 
 export default function Footer() {
     const {getIsDark} = useContext(ThemeContext);
 
-    let closeEmailPopup = function() {
+    const closeEmailPopup = function() {
         const popupDiv = window.document.getElementById('email-popup');
         if (popupDiv) {
             popupDiv.style.display = 'none';
@@ -18,7 +18,6 @@ export default function Footer() {
     }
 
     function handleCopyEmail () {
-        const popup = window.document.getElementById('email-popup');
         const emailCopied = window.document.getElementById('email-copied');
 
         // Show 'Copied' text in div and fade div out
