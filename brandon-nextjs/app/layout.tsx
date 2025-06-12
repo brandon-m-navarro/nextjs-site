@@ -4,14 +4,10 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./ui/header";
+import { josefin } from '@/app/ui/fonts';
+
 import { ThemeContextProvider } from "./store/ThemeContext";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-
+import Footer from "./ui/footer";
 
 // export const metadata: Metadata = {
 //   title: "Brandon Navarro",
@@ -27,13 +23,14 @@ export default function RootLayout({
     <html lang="en">
       <ThemeContextProvider>
         <body
-          className={`${geistSans.variable} antialiased w-full bg-white select-none`}>
+          className={`${josefin.className} antialiased w-full bg-white select-none`}>
           <Header/>
           <div>
             <main>
               {children}
             </main>
           </div>
+          <Footer/>
         </body>
       </ThemeContextProvider>
     </html>

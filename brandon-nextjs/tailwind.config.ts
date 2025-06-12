@@ -18,6 +18,8 @@ const config: Config = {
         green: "rgb(129, 169, 136)",
         greenHover: "rgb(129, 169, 136, 0.5)",
 
+        headerHover: "rgb(53, 54, 74, .20)",
+
         arsenic: "rgb(53, 54, 74)",
 
         mask: "rgb(0, 0, 0, 0.25)",

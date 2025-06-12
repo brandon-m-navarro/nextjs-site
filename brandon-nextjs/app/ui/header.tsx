@@ -1,16 +1,14 @@
 'use client'
 
 import NavBar from "./nav-bar"
-import ThemeToggle from "./theme-toggle"
+import { lato } from '@/app/ui/fonts';
 
 export default function Header() {
     return (
-        <div className="h-[10vh] w-full flex flex-row place-items-center bg-white dark:bg-night">
-            <div className="w-[150px]"></div>
-            <div className="flex justify-around w-full">
+        <div className={`${lato.className} sticky top-0 z-50 h-[10vh] w-full flex flex-row place-items-center bg-white dark:bg-night`}>
+            <div className="flex w-full">
                 <NavBar/>
             </div>
-            <ThemeToggle/>
         </div>
     )
 }
