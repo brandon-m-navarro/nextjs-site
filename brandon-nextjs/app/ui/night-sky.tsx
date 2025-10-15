@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import {randomRange, degreesToRads, lineToAngle} from "../lib/utils";
+import { randomRange, degreesToRads, lineToAngle } from "../lib/utils";
 
 /**
  * Particle class representing a basic particle with position, velocity, and radius.
@@ -163,8 +163,6 @@ const NightSky: React.FC<NightSkyProps> = ({ bg = "#282A3A" }) => {
   const widthRef = useRef<number>(0);
   const heightRef = useRef<number>(0);
 
-
-
   /**
    * Draws a star on the canvas.
    * The star is drawn as a filled circle with a specified radius.
@@ -313,7 +311,6 @@ const NightSky: React.FC<NightSkyProps> = ({ bg = "#282A3A" }) => {
    * Handles resizing the canvas and reinitializing stars.
    */
   useEffect(() => {
-
     // Now window is defined
     widthRef.current = window.innerWidth;
     heightRef.current = window.innerHeight;

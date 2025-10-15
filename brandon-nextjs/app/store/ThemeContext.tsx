@@ -1,9 +1,11 @@
 import { createContext, ReactElement, useEffect, useState } from "react";
 
 const ThemeContext = createContext({
-    applyLight: () => {},
-    applyDark: () => {},
-    getIsDark: ():boolean => {return false},
+  applyLight: () => {},
+  applyDark: () => {},
+  getIsDark: (): boolean => {
+    return false;
+  },
 });
 
 interface ThemePropsInterface {
@@ -21,9 +23,9 @@ export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
 
   function initialThemeHandler(): void {
     if (isLocalStorageEmpty()) {
-        applyLight();
+      applyLight();
     } else {
-      if (localStorage.getItem("theme") == 'dark') {
+      if (localStorage.getItem("theme") == "dark") {
         applyDark();
       } else {
         applyLight();

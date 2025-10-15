@@ -1,86 +1,132 @@
-'use client'
-import React, { useContext, useEffect } from 'react'
-import { debounceResizeListener } from '../lib/utils';
-import clsx from 'clsx';
-import ThemeContext from '../store/ThemeContext';
+"use client";
+import React, { useContext, useEffect } from "react";
+import { debounceResizeListener } from "../lib/utils";
+import clsx from "clsx";
+import ThemeContext from "../store/ThemeContext";
 
-export default function Mountains({children} : {children?:React.ReactNode}) {
+export default function Mountains({
+  children,
+}: {
+  children?: React.ReactNode;
+}) {
+  const { getIsDark } = useContext(ThemeContext);
 
-    const {getIsDark} = useContext(ThemeContext);
+  // Listen to the native browser window resize event from within React component
+  useEffect(() => {
+    function handleResize() {
+      const pathGroup = window.document.getElementById("paths");
+      if (typeof pathGroup !== "undefined" && pathGroup !== null) {
+        pathGroup.style.transform = "scaleX(" + window.innerWidth / 9 + "%)";
+      }
+    }
 
-    // Listen to the native browser window resize event from within React component
-    useEffect(() => {
-        function handleResize() {
+    // Put handleResize call into a variable so we can later remove the event listener
+    const eventHandler = debounceResizeListener(handleResize);
+    window.addEventListener("resize", eventHandler);
 
-            const pathGroup = window.document.getElementById('paths');
-            if (typeof pathGroup !== 'undefined' && pathGroup !== null) {
-                pathGroup.style.transform = 'scaleX(' + window.innerWidth / 9 + '%)';
-            }
-        }
+    // Ensure SVG is appropriatly sized on initial load
+    handleResize();
 
-        // Put handleResize call into a variable so we can later remove the event listener
-        const eventHandler = debounceResizeListener(handleResize);
-        window.addEventListener('resize', eventHandler);
+    // Return values in useEffect should be a cleanup function that removes listener
+    return () => window.removeEventListener("resize", eventHandler);
+  });
 
-        // Ensure SVG is appropriatly sized on initial load
-        handleResize();
+  return (
+    <div className="relative w-full">
+      <div>{children}</div>
+      <div>
+        <svg id="visual" width="100%" height="600">
+          <defs>
+            <filter
+              id="sunMoon"
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              filterUnits="userSpaceOnUse"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dx="-4" dy="-4" />
+              <feGaussianBlur stdDeviation="10" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 0.623529 0 0 0 0 0.0196078 0 0 0 1 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_2005_2"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_2005_2"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feMorphology
+                radius="7"
+                operator="erode"
+                in="SourceAlpha"
+                result="effect2_innerShadow_2005_2"
+              />
+              <feOffset />
+              <feGaussianBlur stdDeviation="3" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 1 0 0 0 0 0.623529 0 0 0 0 0.0196078 0 0 0 0.25 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect2_innerShadow_2005_2"
+              />
+            </filter>
+          </defs>
 
-        // Return values in useEffect should be a cleanup function that removes listener
-        return () => window.removeEventListener('resize', eventHandler);
-    })
-
-    return (
-        <div className='relative w-full'>
-            <div>{children}</div>
-            <div>
-                <svg id="visual" width='100%' height="600">
-
-                    <defs>
-                    <filter id="sunMoon" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
-                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dx="-4" dy="-4"/>
-                            <feGaussianBlur stdDeviation="10"/>
-                            <feComposite in2="hardAlpha" operator="out"/>
-                            <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.623529 0 0 0 0 0.0196078 0 0 0 1 0"/>
-                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2005_2"/>
-                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2005_2" result="shape"/>
-                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                            <feMorphology radius="7" operator="erode" in="SourceAlpha" result="effect2_innerShadow_2005_2"/>
-                        <feOffset/>
-                        <feGaussianBlur stdDeviation="3"/>
-                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.623529 0 0 0 0 0.0196078 0 0 0 0.25 0"/>
-                        <feBlend mode="normal" in2="shape" result="effect2_innerShadow_2005_2"/>
-                        </filter>
-                    </defs>
-
-                    <rect
-                        x="0" y="0"
-                        width="100%" height="600"
-                        fill={clsx(
-                            {
-                                "#FB532C": !getIsDark(),
-                                "transparent": getIsDark()
-                            }
-                        )}>
-                    </rect>
-                    <g filter="url(#sunMoon)">
-
-                        <circle
-                            id="mtn-moon-sun"
-                            cx="75%" cy="65%" r="50"
-                            fill={clsx(
-                                {
-                                    "#FFD102": !getIsDark(),
-                                    "#F5E3B3": getIsDark()
-                                }
-                            )}>
-                        </circle>
-                    </g>
-                    <g id='paths'>
-                        <path
-                            d="
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="600"
+            fill={clsx({
+              "#FB532C": !getIsDark(),
+              transparent: getIsDark(),
+            })}
+          ></rect>
+          <g filter="url(#sunMoon)">
+            <circle
+              id="mtn-moon-sun"
+              cx="75%"
+              cy="65%"
+              r="50"
+              fill={clsx({
+                "#FFD102": !getIsDark(),
+                "#F5E3B3": getIsDark(),
+              })}
+            ></circle>
+          </g>
+          <g id="paths">
+            <path
+              d="
                                 M 0, 417
                                 L 82, 409
                                 L 164, 414
@@ -107,15 +153,13 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
                                 L 0 601
                                 Z
                             "
-                            fill={clsx(
-                                {
-                                    "#e72c27": !getIsDark(),
-                                    "#020916": getIsDark()
-                                }
-                            )}>
-                        </path>
-                        <path
-                            d="
+              fill={clsx({
+                "#e72c27": !getIsDark(),
+                "#020916": getIsDark(),
+              })}
+            ></path>
+            <path
+              d="
                                 M 0, 411
                                 L 82, 397
                                 L 164, 398
@@ -142,15 +186,13 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
                                 L 0, 601
                                 Z
                             "
-                            fill={clsx(
-                                {
-                                    "#c72423": !getIsDark(),
-                                    "#0A111C": getIsDark()
-                                }
-                            )}>
-                        </path>
-                        <path
-                            d="
+              fill={clsx({
+                "#c72423": !getIsDark(),
+                "#0A111C": getIsDark(),
+              })}
+            ></path>
+            <path
+              d="
                                 M 0, 465
                                 L 82, 442
                                 L 164, 462
@@ -177,15 +219,13 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
                                 L 0, 601
                                 Z
                             "
-                            fill={clsx(
-                                {
-                                    "#a81c1f": !getIsDark(),
-                                    "#101622": getIsDark()
-                                }
-                            )}>
-                        </path>
-                        <path
-                            d="
+              fill={clsx({
+                "#a81c1f": !getIsDark(),
+                "#101622": getIsDark(),
+              })}
+            ></path>
+            <path
+              d="
                                 M 0, 484
                                 L 82, 480
                                 L 164, 487
@@ -212,15 +252,13 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
                                 L 0, 601
                                 Z
                             "
-                            fill={clsx(
-                                {
-                                    "#8a161a": !getIsDark(),
-                                    "#151B28": getIsDark()
-                                }
-                            )}>
-                        </path>
-                        <path
-                            d="
+              fill={clsx({
+                "#8a161a": !getIsDark(),
+                "#151B28": getIsDark(),
+              })}
+            ></path>
+            <path
+              d="
                                 M 0, 520
                                 L 82, 505
                                 L 164, 490
@@ -247,15 +285,13 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
                                 L 0, 601
                                 Z
                             "
-                            fill={clsx(
-                                {
-                                    "#6d1015": !getIsDark(),
-                                    "#1A202F": getIsDark()
-                                }
-                            )}>
-                        </path>
-                        <path
-                            d="
+              fill={clsx({
+                "#6d1015": !getIsDark(),
+                "#1A202F": getIsDark(),
+              })}
+            ></path>
+            <path
+              d="
                                 M 0, 522
                                 L 82, 520
                                 L 164, 546
@@ -282,15 +318,13 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
                                 L 0, 601
                                 Z
                             "
-                            fill={clsx(
-                                {
-                                    "#510b0e": !getIsDark(),
-                                    "#1F2435": getIsDark()
-                                }
-                            )}>
-                        </path>
-                        <path
-                            d="
+              fill={clsx({
+                "#510b0e": !getIsDark(),
+                "#1F2435": getIsDark(),
+              })}
+            ></path>
+            <path
+              d="
                                 M 0, 564
                                 L 82, 552
                                 L 164, 560
@@ -317,17 +351,14 @@ export default function Mountains({children} : {children?:React.ReactNode}) {
                                 L 0, 601
                                 Z
                             "
-                            fill={clsx(
-                                {
-                                    "#370601": !getIsDark(),
-                                    "#25293C": getIsDark()
-                                }
-                            )}>
-                        </path>
-                    </g>
-                    
-                </svg>
-            </div>
-        </div>
-    );
+              fill={clsx({
+                "#370601": !getIsDark(),
+                "#25293C": getIsDark(),
+              })}
+            ></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+  );
 }

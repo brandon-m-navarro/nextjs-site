@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import "./globals.css";
 import Header from "./ui/header";
-import { josefin } from '@/app/ui/fonts';
+import { josefin } from "@/app/ui/fonts";
 
 import { ThemeContextProvider } from "./store/ThemeContext";
 import Footer from "./ui/footer";
@@ -16,14 +16,13 @@ export default function RootLayout({
     <html lang="en">
       <ThemeContextProvider>
         <body
-          className={`${josefin.className} antialiased w-full bg-white select-none`}>
-          <Header/>
+          className={`${josefin.className} antialiased w-full bg-white select-none`}
+        >
+          <Header />
           <div>
-            <main>
-              {children}
-            </main>
+            <main>{children}</main>
           </div>
-          <Footer/>
+          <Footer />
         </body>
       </ThemeContextProvider>
     </html>

@@ -1,23 +1,22 @@
 "use client";
 import Image from "next/image";
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import ThemeContext from "../store/ThemeContext";
 
 export default function ThemeToggle() {
-
-  const {applyLight, applyDark} = useContext(ThemeContext);
+  const { applyLight, applyDark } = useContext(ThemeContext);
 
   return (
     <div className="flex flex-row-reverse w-[150px] justify-around">
       <button
         className="rounded-full transition-all bg-green w-[36px] h-[36px] flex justify-center items-center cursor-pointer dark:hover:opacity-75 dark:opacity-50"
         onClick={applyLight}
-        >
+      >
         <Image
-          src='/sun.svg'
+          src="/sun.svg"
           width={24}
           height={24}
-          alt='Sun icon'
+          alt="Sun icon"
           className="w-[24px] h-[24px] pointer-events-none"
         />
       </button>
@@ -26,10 +25,10 @@ export default function ThemeToggle() {
         onClick={applyDark}
       >
         <Image
-          src='/moon.svg'
+          src="/moon.svg"
           width={24}
           height={24}
-          alt='Moon icon'
+          alt="Moon icon"
           className="w-[24px] h-[24px] pointer-events-none"
         />
       </button>
