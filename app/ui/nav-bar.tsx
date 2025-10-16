@@ -24,6 +24,12 @@ export default function NavBar() {
       icon: !getIsDark() ? "/user-solid.svg" : "/user-solid_w.svg",
       icon_w: "/user-solid_w.svg",
     },
+    {
+      name: "Projects",
+      href: "/projects",
+      icon: !getIsDark() ? "/user-solid.svg" : "/user-solid_w.svg",
+      icon_w: "/user-solid_w.svg",
+    },
   ];
 
   return (

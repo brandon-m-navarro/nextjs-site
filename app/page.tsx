@@ -10,94 +10,146 @@ export default function Home() {
     <div className="bg-white dark:bg-night flex flex-col transition-colors items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
       <NightSky bg="#282A3A" />
       <Mountains>
-        <div className="absolute flex flex-col sm:flex-row items-center justify-center top-10 sm:top-28 left-[50%] translate-x-[-50%] w-[90%]">
-          <div className="sm:mr-8 drop-shadow-image max-w-[250px] min-w-[250px] max-h-[250px] min-h-[250px] overflow-hidden">
+        <div className="absolute flex flex-col sm:flex-row items-center justify-center top-10 sm:top-28 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl">
+          {/* Image Container */}
+          <div className="relative mb-6 sm:mb-0 sm:mr-10 lg:mr-12 w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 shadow-2xl shadow-black/20">
             <Image
               src="/me_sitting.JPG"
-              width={338}
-              height={226}
-              alt="Picture of me"
-              className="min-w-[135%] max-w-[135%] translate-x-[-12%] translate-y-[1%]"
+              fill
+              alt="Portrait of me (Brandon Navarro)"
+              className="object-cover object-center scale-105 hover:scale-110 transition-transform duration-500"
               priority
+              sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
             />
+            {/* Subtle overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
           </div>
-          <span className="select-none text-[clamp(1rem, .8852rem + .4898vw, 1.375rem)] max-w-screen-md p-1 bg-maskDarker text-center rounded text-white">
-            {`Welcome to the same site, except built using React, Next.js, and Tailwind! Thanks for stopping by!`}
-          </span>
+
+          {/* Text Container */}
+          <div className="relative max-w-screen-sm">
+            <div className="select-none text-[clamp(1rem,.8852rem+.4898vw,1.375rem)] p-6 sm:p-8 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-center rounded-2xl shadow-2xl shadow-black/20 border border-white/20">
+              <p className="text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
+                Welcome to my portfolio, built with modern technologies
+                including React, Next.js, and Tailwind CSS. Thanks for stopping
+                by!
+              </p>
+            </div>
+
+            {/* Optional decorative element */}
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-80"></div>
+          </div>
         </div>
       </Mountains>
-      <div className="flex justify-center flex-wrap max-w-[700px] mt-8 w-full m-auto">
+
+      {/* Cards Container */}
+      <div className="flex justify-center flex-wrap max-w-4xl xl:max-w-6xl mt-12 lg:mt-16 w-full mx-auto px-4 sm:px-6">
         <NumberedCard
-          className="m-[16px] flex-1 basis-full sm:basis-2/5"
+          className="m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
           number={1}
-          title="Research / Wireframe"
-          content="After writing down a list of requirements to better understand the problem, I like to begin by looking for other UI's that have tackled the same or a similar problem. Then I begin drafting wireframes and mockups. These allow me to discover requirements I may have missed and gives me a resource that can better convey my ideas to my team."
+          title="Research & Wireframing"
+          content="After documenting requirements to fully understand the problem space, I conduct competitive analysis and UI research. This informs the creation of detailed wireframes and mockups that help identify overlooked requirements and effectively communicate vision to stakeholders."
         />
         <NumberedCard
-          className="m-[16px] flex-1 basis-full sm:basis-2/5"
+          className="m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
           number={2}
-          title="Feedback / Collaboration"
-          content="With a wireframe in hand, I can now share with the rest of my team to further improve the design. Iteration based on team feedback leads to better designs, and helps build team cohesion by promoting a more open environment which encourages feedback."
+          title="Feedback & Collaboration"
+          content="With wireframes established, I facilitate collaborative review sessions with cross-functional teams. This iterative feedback process not only enhances design quality but also fosters team alignment and creates an environment that values diverse perspectives."
         />
         <NumberedCard
-          className="m-[16px] flex-1 basis-full sm:basis-2/5"
+          className="m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
           number={3}
-          title="Refine"
-          content="Using feedback from my team, it's time to update and further build out my wireframes to more complete prototypes."
+          title="Refinement & Prototyping"
+          content="Incorporating team feedback, I evolve wireframes into high-fidelity prototypes with interactive elements. This stage focuses on usability testing, visual polish, and preparing assets for development handoff."
         />
         <NumberedCard
-          className="m-[16px] flex-1 basis-full sm:basis-2/5"
+          className="m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
           number={4}
-          title="Experiment"
-          content="Not everything will work, but it's worth trying if it means learning and gaining insights from what doesn't."
+          title="Experimentation & Learning"
+          content="I embrace calculated experimentation to push creative boundaries. While not every concept succeeds, each iteration provides valuable insights that drive innovation and continuous improvement in the design process."
         />
       </div>
 
-      <div className="flex flex-col dark:text-white sm:max-w-[700px] m-auto mt-[24px] mb-[48px] box-border p-4 sm:py-[20px] w-full transition-colors text-black">
-        <h1 className="text-[24px] font-medium py-[12px]">About</h1>
-        <span className="text-[15px] m-auto mb-[12px]">{`Around the end of my Sophomore year in college, I began working at a small startup called TrampleZone. I was mainly working alongside other college kids helping improve the company's existing application HotSpots, a desktop & mobile app that leveraged OpenStreetMaps to let users rate local venues.`}</span>
-        <span className="text-[15px] m-auto mb-[12px]">{`A couple of months into my time there, we began developing a new app with a focus on greek life organizations called MyChapter. With the guidance of the company's founder Jim, I helped map out the expected class structure using UML diagrams and began designing and implementing the frontend. After graduating in the year of COVID, I was fortunate to get a software engineering role at TrampleZone, where I got to continue my work on MyChapter and even began testing out the service with multiple fraternities at my alma mater.`}</span>
-        <span className="text-[15px] m-auto">{`Outside of work, I like to go out on walks and runs around Somerville, play in local basketball rec leagues, and go out for backpacking hikes when I'm visiting family in New Hampshire.`}</span>
+      {/* About Section */}
+      <div className="flex flex-col dark:text-white max-w-[700px] mx-auto my-6 sm:my-12 p-4 sm:py-5 w-full transition-colors text-black">
+        <h1 className="text-2xl font-medium py-3">About</h1>
+        <div className="max-w-3xl mx-auto space-y-4">
+          <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            During my sophomore year of college, I joined TrampleZone, a small
+            startup where I collaborated with fellow students to enhance
+            HotSpots—a desktop and mobile application that utilized
+            OpenStreetMaps to enable users to rate and review local venues.
+          </p>
+
+          <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            Several months into my role, we embarked on developing MyChapter, a
+            new application focused on Greek life organizations. Under the
+            mentorship of founder Jim, I contributed to system architecture by
+            creating UML diagrams and took ownership of frontend design and
+            implementation. After graduating during the COVID-19 pandemic, I
+            transitioned to a full-time software engineering position at
+            TrampleZone, where I continued developing MyChapter and conducted
+            pilot testing with multiple fraternities at my alma mater.
+          </p>
+
+          <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            Beyond my professional work, I enjoy exploring Somerville through
+            walking and running routes, participating in local basketball
+            recreational leagues, and embarking on backpacking hikes when
+            visiting family in New Hampshire.
+          </p>
+        </div>
       </div>
-      <div className="flex flex-col box-border p-2 h-fit m-auto justify-center sm:flex-row sm:w-[75%] sm:h-[350px] sm:min-w-[650px]">
-        <div className="relative group h-full overflow-hidden mb-4 sm:mb-0 sm:mr-8">
+
+      {/* Images Gallery */}
+      <div className="flex flex-col p-4 h-fit mx-auto justify-center sm:flex-row sm:w-full sm:max-w-4xl sm:h-[400px] gap-4">
+        {/* Main Image - Left */}
+        <div className="relative group h-64 sm:h-full sm:flex-1 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
           <Image
             src="/skydive.png"
-            width={339}
-            height={350}
-            alt="Picture of me skydiving"
-            className="sm:min-w-[145%] sm:max-w-[145%] sm:overflow-hidden sm:translate-x-[-12%]"
+            fill
+            alt="Me skydiving in Swakopmund, Namibia during my IQP"
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, 50vw"
           />
-          <span className="absolute bottom-[4px] min-w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 right-[50%] translate-x-[50%] box-border p-[4px]">
-            Me skydiving in Swakopmund, Namibia (IQP)
-          </span>
+          <ImageCaption text="Skydiving in Swakopmund, Namibia (IQP)" />
         </div>
-        <div className="flex flex-col h-auto">
-          <div className="relative group overflow-hidden mb-4 sm:mb-[4px] sm:h-[50%]">
+
+        {/* Right Column - Two Images Stacked */}
+        <div className="flex flex-col h-auto sm:flex-1 gap-4">
+          {/* Top Right Image */}
+          <div className="relative group h-64 sm:h-1/2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
             <Image
               src="/Hout_Bay.JPG"
-              width={339}
-              height={350}
-              alt="Picture of Hout Bay"
+              fill
+              alt="View of Hout Bay in Cape Town, South Africa"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 640px) 100vw, 25vw"
             />
-            <span className="absolute bottom-[4px] min-w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 right-[50%] translate-x-[50%] box-border p-[4px]">
-              The Hout Bay in Cape Town
-            </span>
+            <ImageCaption text="Hout Bay, Cape Town" />
           </div>
-          <div className="relative group h-auto sm:h-[50%] overflow-hidden">
+
+          {/* Bottom Right Image */}
+          <div className="relative group h-64 sm:h-1/2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
             <Image
               src="/hershey.JPG"
-              width={339}
-              height={169}
-              alt="Hershey"
-              className="min-w-[100%] max-w-[100%] sm:translate-y-[-30%] overflow-hidden"
+              fill
+              alt="Hershey the dog being photogenic"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 640px) 100vw, 25vw"
             />
-            <span className="absolute bottom-[4px] min-w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 right-[50%] translate-x-[50%] box-border p-[4px]">
-              Hershey being photogenic
-            </span>
+            <ImageCaption text="Hershey being photogenic" />
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+// Reusable ImageCaption component to eliminate duplicate caption styles
+function ImageCaption({ text }: { text: string }) {
+  return (
+    <span className="absolute bottom-1 w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 left-1/2 -translate-x-1/2 p-1">
+      {text}
+    </span>
   );
 }
