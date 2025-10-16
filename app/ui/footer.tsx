@@ -58,7 +58,7 @@ export default function Footer() {
   }
 
   return (
-    <div className="relative sm:flex-nowrap sm:h-[64px] pt-[12px] pb-[12px] sm:pt-0 sm:pb-0 flex-wrap w-full flex flex-row place-items-center border-t-2 border-black/25 dark:border-white/25 bg-white dark:bg-[#242532]">
+    <div className="relative sm:flex-nowrap sm:h-[64px] pt-[12px] pb-[12px] sm:pt-0 sm:pb-0 flex-wrap w-full flex flex-row place-items-center border-t-2 border-black/25 dark:border-white/25 bg-white dark:bg-[#020a16]">
       <div className="z-10 flex justify-center items-center mb-[12px] sm:mb-0 m-auto sm:absolute sm:top-[50%] sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] text-black relative basis-full translate-x-0 translate-y-0">
         <button
           onClick={() => {

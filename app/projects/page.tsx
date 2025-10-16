@@ -62,7 +62,7 @@ const projects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-nightSoft py-12">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#1a202c] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -78,7 +78,7 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-night rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-[#2d3748] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               {/* Project Image */}
               <div className="relative h-48 w-full">
