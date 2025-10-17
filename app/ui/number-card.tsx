@@ -19,13 +19,13 @@ export default function NumberedCard({
         className
       }
     >
-      <span className="!text-dayOrange text-[28px] h-[32px] dark:!text-nightGold">
+      <span className="!text-dayOrange mb-[12px] text-center text-[28px] h-[32px] dark:!text-nightGold">
         {number}
       </span>
-      <span className="font-semibold text-[24px] whitespace-nowrap h-[32px] mb-[12px] mt-[12px]">
+      <span className="font-semibold text-center text-[20px] whitespace-nowrap h-[28px] mb-[12px]">
         {title}
       </span>
-      <span className="text-[16px]">{content}</span>
+      <span className="text-[14px] font-light">{content}</span>
     </div>
   );
 }

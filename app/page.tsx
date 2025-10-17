@@ -7,7 +7,7 @@ import NightSky from "./ui/night-sky";
 
 export default function Home() {
   return (
-    <div className="bg-white dark:bg-night flex flex-col transition-colors items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="bg-white dark:bg-[#1a202c] flex flex-col transition-colors items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
       <NightSky bg="#282A3A" />
       <Mountains>
         <div className="absolute flex flex-col sm:flex-row items-center justify-center top-10 sm:top-28 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl">
@@ -44,25 +44,25 @@ export default function Home() {
       {/* Cards Container */}
       <div className="flex justify-center flex-wrap max-w-4xl xl:max-w-6xl mt-12 lg:mt-16 w-full mx-auto px-4 sm:px-6">
         <NumberedCard
-          className="m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
+          className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
           number={1}
           title="Research & Wireframing"
           content="After documenting requirements to fully understand the problem space, I conduct competitive analysis and UI research. This informs the creation of detailed wireframes and mockups that help identify overlooked requirements and effectively communicate vision to stakeholders."
         />
         <NumberedCard
-          className="m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
+          className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
           number={2}
           title="Feedback & Collaboration"
           content="With wireframes established, I facilitate collaborative review sessions with cross-functional teams. This iterative feedback process not only enhances design quality but also fosters team alignment and creates an environment that values diverse perspectives."
         />
         <NumberedCard
-          className="m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
+          className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
           number={3}
           title="Refinement & Prototyping"
           content="Incorporating team feedback, I evolve wireframes into high-fidelity prototypes with interactive elements. This stage focuses on usability testing, visual polish, and preparing assets for development handoff."
         />
         <NumberedCard
-          className="m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
+          className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
           number={4}
           title="Experimentation & Learning"
           content="I embrace calculated experimentation to push creative boundaries. While not every concept succeeds, each iteration provides valuable insights that drive innovation and continuous improvement in the design process."
