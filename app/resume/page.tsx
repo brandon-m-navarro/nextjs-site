@@ -198,6 +198,20 @@ export default function ResumePage() {
                   />
                 </div>
                 <div className="skill-rating">
+                  <span>Typescript</span>
+                  <SkillRating
+                    rating={4}
+                    backgroundColor={clsx({
+                      "bg-skillBackgroundLight": !getIsDark(),
+                      "bg-skillBackgroundDark": getIsDark(),
+                    })}
+                    fillColor={clsx({
+                      "bg-skillFillLight": !getIsDark(),
+                      "bg-skillFillDark": getIsDark(),
+                    })}
+                  />
+                </div>
+                <div className="skill-rating">
                   <span>Java</span>
                   <SkillRating
                     rating={3}
