@@ -17,7 +17,6 @@ export const skillsByCategory: Record<SkillCategory, Skill[]> = {
     { label: "Typescript", rating: 4 },
     { label: "Java",       rating: 3 },
     { label: "Node",       rating: 3 },
-    { label: "Java",       rating: 4 },
     { label: "PHP",        rating: 2 },
     { label: "Python",     rating: 2 },
     { label: "SQL",        rating: 2 },
