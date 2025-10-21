@@ -13,10 +13,10 @@ interface Project {
   tags: string[];
   github?: string;
   liveDemo?: string;
-  longDescription?: string; // Add this for expanded view
+  longDescription?: string;
 }
 
-// Sample projects data with long descriptions
+// Create Projects
 const projects: Project[] = [
   {
     id: "1",
@@ -115,10 +115,10 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
 
   if (isExpanded) {
     return (
-      <>
+      <div>
         {/* Backdrop */}
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40" />
-        
+
         {/* Expanded Card */}
         <div className="fixed top-8 left-8 right-8 bottom-8 md:top-16 md:left-16 md:right-16 md:bottom-16 bg-white dark:bg-[#2d3748] rounded-xl shadow-2xl z-50 flex flex-col md:flex-row p-6 md:p-8 overflow-hidden">
           {/* Close Button */}
@@ -241,11 +241,10 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
             </div>
           </div>
         )}
-      </>
+      </div>
     );
   }
 
-  // Regular Card
   return (
     <div className="bg-white dark:bg-[#2d3748] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
       {/* Project Image */}

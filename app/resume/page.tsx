@@ -7,6 +7,8 @@ import ThemeContext from "../store/ThemeContext";
 import localFont from "next/font/local";
 import SkillRating from "../ui/skill-rating";
 
+import { skillsByCategory } from "../data/skills";
+
 import "@/app/ui/global.css";
 import Modal from "../ui/modal";
 
@@ -26,9 +28,9 @@ export default function ResumePage() {
 
   return (
     <div
-      className={`text-black dark:text-white w-full dark:bg-nightSoft py-1 ${lato.className}`}
+      className={`text-black dark:text-white w-full dark:bg-[#1A202C] py-1 ${lato.className}`}
     >
-      <div className="flex flex-wrap  max-w-[800px] my-[12px] mx-auto box-border p-[12px] rounded-[4px] bg-black/[0.05] dark:bg-black/[0.25]">
+      <div className="flex flex-wrap  max-w-[800px] my-[12px] mx-auto box-border p-[12px] rounded-[4px] bg-black/[0.05] dark:bg-[#2d3748]">
         <div id="Face&Title" className="flex mb-[12px] basis-full items-center">
           <div className="flex overflow-hidden h-[50px] w-[50px] rounded-[4px] justify-center items-center">
             <Image
@@ -44,7 +46,7 @@ export default function ResumePage() {
               Brandon Manuel Navarro
             </span>
             <span
-              className={`${josefinSansLight.className} text-[16px] leading-[16px]`}
+              className={`${josefinSansLight.className} text-[16px] leading-[16px] font-[600]`}
             >
               Software engineer with a focus on frontend development
             </span>
@@ -148,381 +150,29 @@ export default function ResumePage() {
                 SKILLS
               </span>
             </div>
-            <div className="mb-[0.75em]">
-              <span
-                className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}
-              >
-                Programming
-              </span>
-              <div className="flex flex-col">
-                <div className="skill-rating">
-                  <span>Javascript</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>HTML</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>CSS</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Typescript</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Java</span>
-                  <SkillRating
-                    rating={3}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Node</span>
-                  <SkillRating
-                    rating={3}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>PHP</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Python</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>SQL</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>C</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>C++</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
+            {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
+              <div key={category}>
+                <span className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}>{category}</span>
+                <div className="flex flex-col">
+                  {categorySkills.map((skill) => (
+                    <div key={skill.label} className="skill-rating">
+                      <span>{skill.label}</span>
+                      <SkillRating
+                        rating={skill.rating}
+                        backgroundColor={clsx({
+                          "bg-skillBackgroundLight": !getIsDark(),
+                          "bg-skillBackgroundDark": getIsDark(),
+                        })}
+                        fillColor={clsx({
+                          "bg-skillFillLight": !getIsDark(),
+                          "bg-skillFillDark": getIsDark(),
+                        })}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-
-            <div className="mb-[0.75em]">
-              <span
-                className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}
-              >
-                Operating Systems
-              </span>
-              <div className="flex flex-col">
-                <div className="skill-rating">
-                  <span>Windows</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>MacOS</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>iOS</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Android</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-[0.75em]">
-              <span
-                className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}
-              >
-                Frameworks
-              </span>
-              <div className="flex flex-col">
-                <div className="skill-rating">
-                  <span>Require.js</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Tailwind</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>React</span>
-                  <SkillRating
-                    rating={3}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Next.js</span>
-                  <SkillRating
-                    rating={3}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-[0.75em]">
-              <span
-                className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}
-              >
-                Tools
-              </span>
-              <div className="flex flex-col">
-                <div className="skill-rating">
-                  <span>Figma</span>
-                  <SkillRating
-                    rating={5}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Git</span>
-                  <SkillRating
-                    rating={4}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Adobe Premiere</span>
-                  <SkillRating
-                    rating={3}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Android Studio</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-                <div className="skill-rating">
-                  <span>Docker</span>
-                  <SkillRating
-                    rating={2}
-                    backgroundColor={clsx({
-                      "bg-skillBackgroundLight": !getIsDark(),
-                      "bg-skillBackgroundDark": getIsDark(),
-                    })}
-                    fillColor={clsx({
-                      "bg-skillFillLight": !getIsDark(),
-                      "bg-skillFillDark": getIsDark(),
-                    })}
-                  />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="flex-[1_1_100%] md:flex-[0.75_1_0%] px-[4px]">
@@ -570,7 +220,7 @@ export default function ResumePage() {
 
           {/*Campus Involvement*/}
           <div className="flex flex-col">
-            <span className="text-[12px]">Campus Involvement</span>
+            <span className="text-[14px] font-[700]">Campus Involvement</span>
 
             {/* Sigma Pi */}
             <div className="flex flex-col">
@@ -951,7 +601,7 @@ export default function ResumePage() {
               data from the VR headset using Unity and GStreamer library. Using
               C++ and Python scripts to interface with{" "}
               <a
-                className="underline"
+                className="dark:text-[#faebd7] text-[#551A8B]"
                 href="https://wiki.ros.org/ROS/Introduction"
               >
                 ROS
