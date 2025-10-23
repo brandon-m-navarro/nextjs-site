@@ -10,7 +10,7 @@ import SkillRating from "../ui/skill-rating";
 import { skillsByCategory } from "../data/skills";
 
 import "@/app/ui/global.css";
-import Modal from "../ui/modal";
+import ExpandableImage from "../ui/expandable-image";
 
 const josefinSansLight = localFont({
   src: "../fonts/added/jsans-light.woff",
@@ -150,29 +150,35 @@ export default function ResumePage() {
                 SKILLS
               </span>
             </div>
-            {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
-              <div key={category}>
-                <span className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}>{category}</span>
-                <div className="flex flex-col">
-                  {categorySkills.map((skill) => (
-                    <div key={skill.label} className="skill-rating">
-                      <span>{skill.label}</span>
-                      <SkillRating
-                        rating={skill.rating}
-                        backgroundColor={clsx({
-                          "bg-skillBackgroundLight": !getIsDark(),
-                          "bg-skillBackgroundDark": getIsDark(),
-                        })}
-                        fillColor={clsx({
-                          "bg-skillFillLight": !getIsDark(),
-                          "bg-skillFillDark": getIsDark(),
-                        })}
-                      />
-                    </div>
-                  ))}
+            {Object.entries(skillsByCategory).map(
+              ([category, categorySkills]) => (
+                <div key={category}>
+                  <span
+                    className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}
+                  >
+                    {category}
+                  </span>
+                  <div className="flex flex-col">
+                    {categorySkills.map((skill) => (
+                      <div key={skill.label} className="skill-rating">
+                        <span>{skill.label}</span>
+                        <SkillRating
+                          rating={skill.rating}
+                          backgroundColor={clsx({
+                            "bg-skillBackgroundLight": !getIsDark(),
+                            "bg-skillBackgroundDark": getIsDark(),
+                          })}
+                          fillColor={clsx({
+                            "bg-skillFillLight": !getIsDark(),
+                            "bg-skillFillDark": getIsDark(),
+                          })}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
         <div className="flex-[1_1_100%] md:flex-[0.75_1_0%] px-[4px]">
@@ -611,33 +617,15 @@ export default function ResumePage() {
               participants through the study.
             </span>
             <div className="flex mt-[12px]">
-              <Modal
-                title="MQP Poster"
-                content={
-                  <Image
-                    src={"/mqp-poster.svg"}
-                    height={641}
-                    width={500}
-                    alt="MQP Poster"
-                    className="max-w-[600px] min-w-[275px]"
-                  />
-                }
-              >
-                <Image
-                  src={"/mqp-poster.svg"}
-                  height={195}
-                  width={250}
-                  alt="MQP Poster"
-                  className="mr-[12px] pointer-events-none max-w-[250px]"
+              <div className="w-[250px] mr-[12px]">
+                <ExpandableImage
+                  imageSrc="/mqp-poster.svg"
+                  imageAlt="Major Qualifying Project Poster"
                 />
-              </Modal>
-              <Image
-                src={"/trina.png"}
-                height={195}
-                width={250}
-                alt="TRINA Robot"
-                className="hidden sm:block"
-              />
+              </div>
+              <div className="w-[250px]">
+                <ExpandableImage imageSrc="/trina.png" imageAlt="TRINA Robot" />
+              </div>
             </div>
           </div>
 
@@ -682,12 +670,12 @@ export default function ResumePage() {
               created by a WPI professor (ASSISTments), which I also worked with
               before the project.
             </span>
-            <Image
-              src={"/iqp_team_sm.png"}
-              width={250}
-              height={187}
-              alt="My team members, sponsors, and I eating cake"
-            />
+            <div className="w-[250px]">
+              <ExpandableImage
+                imageSrc="/iqp_team.png"
+                imageAlt="My team members, sponsors, and I eating cake"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -21,6 +21,22 @@ body {
   font-family: Lato;
 }
 
+/* Prevent content behind modal from receiving events when modal is active */
+body.modal-open {
+  pointer-events: none;
+}
+
+body.modal-open .image-modal {
+  pointer-events: auto;
+}
+
+/* Mobile adjustments - show expand button always on mobile */
+@media (max-width: 767px) {
+  .group-hover\:opacity-100 {
+    opacity: 1 !important;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
