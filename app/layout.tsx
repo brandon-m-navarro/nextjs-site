@@ -1,13 +1,6 @@
-"use client";
-
 import "./globals.css";
-import Header from "./ui/header";
-import { josefin } from "@/app/ui/fonts";
 import type { Metadata } from "next";
-
-import { ThemeContextProvider } from "./store/ThemeContext";
-import Footer from "./ui/footer";
-
+import ClientBody from "./ClientBody";
 
 export const metadata: Metadata = {
   title: "Brandon Navarro",
@@ -21,17 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeContextProvider>
-        <body
-          className={`${josefin.className} antialiased w-full bg-white select-none`}
-        >
-          <Header />
-          <div>
-            <main>{children}</main>
-          </div>
-          <Footer />
-        </body>
-      </ThemeContextProvider>
+      <ClientBody>{children}</ClientBody>
     </html>
   );
 }
