@@ -40,7 +40,10 @@ export default function NavBar() {
             key={link.name}
             href={link.href}
             className={clsx(
-              'relative after:content-[""] after:bottom-0 after:w-3/4 after:bg-[#81A988] after:h-[2px] after:left-1/2 after:absolute after:top-[calc(100% + -2px)] after:transition-all after:translate-x-[-175%] overflow-hidden min-[475px]:h-[42px] w-fit p-[12px] min-[475px]:p-0 min-[475px]:w-24 transition-all box-border text-center leading-[42px] rounded-sm text-sm font-medium text-black dark:text-white hover:bg-headerHover',
+              'relative after:content-[""] after:bottom-0 after:w-3/4 after:h-[2px] after:left-1/2 after:absolute after:top-[calc(100% + -2px)] after:transition-all after:translate-x-[-175%] overflow-hidden min-[475px]:h-[42px] w-fit p-[12px] min-[475px]:p-0 min-[475px]:w-24 transition-all box-border text-center leading-[42px] rounded-sm text-sm font-medium text-black dark:text-white hover:bg-headerHover',
+              getIsDark() 
+                ? 'after:bg-[#86467c]' 
+                : 'after:bg-[#81A988]',
               {
                 "opacity-50": pathname !== link.href,
               },
