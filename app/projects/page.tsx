@@ -120,18 +120,11 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40" />
 
         {/* Expanded Card */}
-        <div className="fixed top-8 left-8 right-8 bottom-8 md:top-16 md:left-16 md:right-16 md:bottom-16 bg-white dark:bg-[#2d3748] rounded-xl shadow-2xl z-50 flex flex-col md:flex-row p-6 md:p-8 overflow-hidden">
-          {/* Close Button */}
-          <button
-            onClick={() => onToggle(project.id)}
-            className="absolute top-4 right-4 w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors z-10"
-          >
-            ×
-          </button>
+        <div className="fixed top-8 left-8 right-8 bottom-8 md:top-16 md:left-16 md:right-16 md:bottom-16 bg-white dark:bg-[#2d3748] rounded-xl shadow-2xl z-50 flex flex-col md:flex-row overflow-hidden">
 
           {/* Image Section */}
-          <div className="flex-1 mb-6 md:mb-0 md:mr-8">
-            <div className="relative h-64 md:h-full rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+          <div className="flex-1 mb-6 md:mb-0">
+            <div className="relative h-64 md:h-full rounded-l-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -150,13 +143,13 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
           </div>
 
           {/* Content Section */}
-          <div className="flex-1 flex flex-col overflow-hidden">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="flex-1 flex flex-col overflow-hidden p-6">
+            <h2 className="text-[1.5rem] font-bold text-gray-900 dark:text-white mb-4">
               {project.title}
             </h2>
 
-            <div className="flex-1 overflow-y-auto pr-2 mb-6">
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+            <div className="flex-1 overflow-y-auto pr-2 mb-6 pb-[24px] [mask-image:linear-gradient(to_bottom,black_calc(100%-40px),transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_calc(100%-40px),transparent_100%)]">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-[1rem]">
                 {project.longDescription || project.description}
               </p>
             </div>
@@ -263,8 +256,8 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
           {project.title}
         </h2>
 
-        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-          {project.description}
+        <p className="text-gray-600 dark:text-gray-300 mb-4 leading-[1.5] text-base line-clamp-3">
+          {project.longDescription}
         </p>
 
         {/* Tags */}
