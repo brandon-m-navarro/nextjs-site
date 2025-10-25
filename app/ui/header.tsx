@@ -2,6 +2,7 @@
 
 import NavBar from "./nav-bar";
 import { lato } from "@/app/ui/fonts";
+import ThemeToggle from "./theme-toggle";
 
 export default function Header() {
   return (
@@ -10,6 +11,7 @@ export default function Header() {
     >
       <div className="flex w-full">
         <NavBar />
+        <ThemeToggle className="ml-auto mr-[24px]"/>
       </div>
     </div>
   );

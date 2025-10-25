@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import ThemeToggle from "./theme-toggle";
 import Image from "next/image";
 import { useContext } from "react";
 import ThemeContext from "../store/ThemeContext";
@@ -144,9 +143,6 @@ export default function Footer() {
             <span className="text-white text-[14px]">Email</span>
           </button>
         </div>
-      </div>
-      <div className="m-auto sm:m-0 sm:ml-auto">
-        <ThemeToggle />
       </div>
       <button
         id="mask"

@@ -101,7 +101,7 @@ export default function Home() {
       </div>
 
       {/* Images Gallery */}
-      <div className="flex flex-col p-4 h-fit mx-auto justify-center sm:flex-row sm:w-full sm:max-w-4xl sm:h-[400px] gap-4">
+      <div className="flex flex-col p-4 h-fit mx-auto justify-center w-full sm:flex-row sm:max-w-4xl sm:h-[400px] gap-4">
         {/* Main Image - Left */}
         <div className="relative group h-64 sm:h-full sm:flex-1 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
           <Image
@@ -148,8 +148,8 @@ export default function Home() {
 // Reusable ImageCaption component to eliminate duplicate caption styles
 function ImageCaption({ text }: { text: string }) {
   return (
-    <span className="absolute bottom-1 w-[90%] bg-imageTextWhite text-black transition-opacity opacity-0 group-hover:opacity-100 left-1/2 -translate-x-1/2 p-1">
-      {text}
-    </span>
+    <div className="absolute inset-x-3 bottom-3 bg-white/90 backdrop-blur-sm text-gray-900 transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 rounded-lg px-3 py-2 shadow-lg border border-white/20">
+      <span className="text-sm font-medium tracking-tight">{text}</span>
+    </div>
   );
 }
