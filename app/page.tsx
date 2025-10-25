@@ -92,10 +92,14 @@ export default function Home() {
           </p>
 
           <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-            Beyond my professional work, I enjoy exploring Somerville through
-            walking and running routes, participating in local basketball
-            recreational leagues, and embarking on backpacking hikes when
-            visiting family in New Hampshire.
+            {`Following my time at TrampleZone in early 2024, I invested time in independent 
+            learning and community involvement in Somerville. This period allowed me to gain 
+            a valuable perspective, renew my passion for software engineering, and enjoy an 
+            active lifestyle through local basketball leagues and exploring walking trails. 
+            I have since deepened my expertise by exploring new languages and frameworks, 
+            and I'm now excited to join a collaborative team focused on creating software 
+            that delivers real value to users. I'm currently based in Wilmot, NH, and am 
+            fully open to relocation for the right opportunity.`}
           </p>
         </div>
       </div>
