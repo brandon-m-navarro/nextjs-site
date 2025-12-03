@@ -27,7 +27,7 @@ const projects: Project[] = [
     link: "/",
     tags: ["Authentication", "Next.js", "Postgres"],
     github: "https://github.com/brandon-m-navarro/nextjs-dashboard",
-    liveDemo: "https://nextjs-dashboard-sigma-eight-57.vercel.app/",
+    liveDemo: "https://dash.bnav.dev/",
   },
   {
     id: "2",
@@ -38,20 +38,20 @@ const projects: Project[] = [
     link: "/",
     tags: ["Next.js", "TypeScript", "Tailwind", "Postgres"],
     github: "https://github.com/brandon-m-navarro/nextjs-todo",
-    liveDemo: "https://nextjs-todo-lake.vercel.app/",
+    liveDemo: "https://todo.bnav.dev/",
   },
   {
     id: "3",
     title: "Portfolio Site",
     description: "A client-side application hosted on GitHub Pages...",
-    longDescription: "A client-side application hosted on GitHub Pages showcasing scalable JavaScript architecture through ES6 classes and inheritance patterns. Implements persistent UI preferences via LocalStorage with full theme synchronization. Originally developed with vanilla JavaScript applying professional patterns from industry experience, then reimplemented with React/Next.js to demonstrate framework versatility and comparative understanding. The structure of this project was inspired by the codebase I'd worked on with MyChapter at Tramplezone LLC.",
+    longDescription: "This project began as a vanilla JavaScript application, built with scalable ES6 classes and LocalStorage for persistent user preferences. It was then reimplemented in React/Next.js, serving as a practical comparison of foundational patterns versus modern framework-based development.",
     image: "/portfolio.png",
     link: "/",
     tags: ["JS (ES6)", "CSS3", "SVG"],
     github: "https://github.com/brandon-m-navarro/brandon-m-navarro.github.io",
     liveDemo: "https://brandon-m-navarro.github.io/",
   },
-    {
+  {
     id: "4",
     title: "Duolingo Chinese → Anki Bridge",
     description: "",
@@ -65,7 +65,9 @@ const projects: Project[] = [
 ];
 
 export default function ProjectsPage() {
-  const [expandedProjectId, setExpandedProjectId] = useState<string | null>(null);
+  const [expandedProjectId, setExpandedProjectId] = useState<string | null>(
+    null
+  );
 
   const toggleProject = (projectId: string) => {
     if (expandedProjectId === projectId) {
@@ -80,7 +82,9 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            My Projects
+          </h1>
           <p className="text-xl text-gray-600 dark:text-white max-w-2xl mx-auto">
             {`A collection of projects I've built, featuring modern technologies
             and clean design principles.`}
@@ -132,7 +136,6 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
 
         {/* Expanded Card */}
         <div className="fixed top-8 left-8 right-8 bottom-8 md:top-16 md:left-16 md:right-16 md:bottom-16 bg-white dark:bg-[#2d3748] rounded-xl shadow-2xl z-50 flex flex-col md:flex-row overflow-hidden">
-
           {/* Image Section */}
           <div className="flex-1 mb-6 md:mb-0">
             <div className="relative h-64 md:h-full rounded-l-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -221,11 +224,11 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
 
         {/* Image Modal */}
         {isImageModalOpen && (
-          <div 
+          <div
             className="fixed inset-0 bg-black bg-opacity-90 z-[60] flex items-center justify-center p-4"
             onClick={() => setIsImageModalOpen(false)}
           >
-            <div 
+            <div
               className="relative max-w-4xl max-h-full"
               onClick={(e) => e.stopPropagation()}
             >
@@ -300,11 +303,7 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
               className="flex items-center justify-center w-12 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
               title="GitHub Repository"
             >
-              <svg
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
             </a>

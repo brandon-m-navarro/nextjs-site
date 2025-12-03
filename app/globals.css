@@ -17,8 +17,10 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  /* font-family: Arial, Helvetica, sans-serif; */
   font-family: Lato;
+}
+body.dark {
+  background-color: #0a0a0a;
 }
 
 /* Prevent content behind modal from receiving events when modal is active */
