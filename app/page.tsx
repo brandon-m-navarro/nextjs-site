@@ -51,13 +51,13 @@ export default function Home() {
             className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
             number={1}
             title="Research & Wireframing"
-            content={`When starting a new project or feature, the first things I do is research. Fully understanding a problem means understanding the user. By asking clarifying questions, seeing what solutions already exist, and gathering necessary documentation. This informs the creation of wireframes and mockups that help reveal overlooked requirements, and help effectively communicate the plan to team members and/or stakeholders. The better I understand a problem, the more accurate I can be with deadlines.`}
+            content={`When starting a new project or feature, the first things I do is research. Fully understanding a problem means understanding the user; asking clarifying questions, seeing what solutions already exist, and gathering necessary documentation. This informs the creation of wireframes and mockups that help reveal overlooked requirements, and help effectively communicate the plan to team members and stakeholders. The better I understand a problem, the more accurate I can be with deadlines.`}
           />
           <NumberedCard
             className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
             number={2}
             title="Feedback & Collaboration"
-            content={`With wireframes in-hand, I find it incredibly useful to tweak my designs based on feedback from other team members. By adopting an iterative process, not only is the design quality improved, but it also fosters team alignment. An environment that values diverse perspectives leads to better results. I also know it's important to set deadlines at this stage as to prevent the project/feature from getting stuck in the design phase.`}
+            content={`With wireframes in-hand, I find it incredibly useful to tweak my designs based on feedback from other team members. By adopting an iterative process, not only is the design quality improved, but the team stays in sync. An environment that values diverse perspectives leads to better results. I also know it's important to set deadlines at this stage as to prevent the project/feature from getting stuck in endless re-designs.`}
           />
           <NumberedCard
             className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
