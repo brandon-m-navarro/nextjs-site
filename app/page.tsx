@@ -29,77 +29,93 @@ export default function Home() {
           <div className="relative max-w-screen-sm">
             <div className="select-none text-[clamp(1rem,.8852rem+.4898vw,1.375rem)] p-6 sm:p-8 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-center rounded-2xl shadow-2xl shadow-black/20 border border-white/20">
               <p className="text-gray-800 dark:text-gray-200 leading-relaxed font-medium">
-                Welcome to my portfolio, built with modern technologies
-                including React, Next.js, and Tailwind CSS. Thanks for stopping
-                by!
+                Welcome to my portfolio! I'm Brandon, a software engineer
+                looking to expand my knowledge in a close-knit, team
+                environment. Thanks for stopping by!
               </p>
             </div>
 
             {/* Optional decorative element */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-80"></div>
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-80"></div>
           </div>
         </div>
       </Mountains>
 
       {/* Cards Container */}
-      <div className="flex justify-center flex-wrap max-w-4xl xl:max-w-6xl mt-12 lg:mt-16 w-full mx-auto px-4 sm:px-6">
-        <NumberedCard
-          className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
-          number={1}
-          title="Research & Wireframing"
-          content="After documenting requirements to fully understand the problem space, I conduct competitive analysis and UI research. This informs the creation of detailed wireframes and mockups that help identify overlooked requirements and effectively communicate vision to stakeholders."
-        />
-        <NumberedCard
-          className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
-          number={2}
-          title="Feedback & Collaboration"
-          content="With wireframes established, I facilitate collaborative review sessions with cross-functional teams. This iterative feedback process not only enhances design quality but also fosters team alignment and creates an environment that values diverse perspectives."
-        />
-        <NumberedCard
-          className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
-          number={3}
-          title="Refinement & Prototyping"
-          content="Incorporating team feedback, I evolve wireframes into high-fidelity prototypes with interactive elements. This stage focuses on usability testing, visual polish, and preparing assets for development handoff."
-        />
-        <NumberedCard
-          className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
-          number={4}
-          title="Experimentation & Learning"
-          content="I embrace calculated experimentation to push creative boundaries. While not every concept succeeds, each iteration provides valuable insights that drive innovation and continuous improvement in the design process."
-        />
+      <div className="mt-12 lg:mt-16">
+        <h1 className="text-2xl font-medium py-3 px-4 text-black dark:text-white">
+          My approach to frontend development
+        </h1>
+        <div className="flex justify-center flex-wrap max-w-4xl xl:max-w-6xl w-full mx-auto px-4 sm:px-6">
+          <NumberedCard
+            className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
+            number={1}
+            title="Research & Wireframing"
+            content="When starting a new project or feature, the first things I do is research. Fully understanding a problem means understanding the user. By asking clarifying questions, seeing what solutions already exist, and gathering necessary documentation. This informs the creation of wireframes and mockups that help reveal overlooked requirements, and help effectively communicate the plan to team members and/or stakeholders. The better I understand a problem, the more accurate I can be with deadlines."
+          />
+          <NumberedCard
+            className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
+            number={2}
+            title="Feedback & Collaboration"
+            content={`With wireframes in-hand, I find it incredibly useful to tweak my designs based on feedback from other team members. By adopting an iterative process, not only is the design quality improved, but it also fosters team alignment. An environment that values diverse perspectives leads to better results. I also know it's important to set deadlines at this stage as to prevent the project/feature from getting stuck in the design phase.`}
+          />
+          <NumberedCard
+            className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
+            number={3}
+            title="Refinement & Prototyping"
+            content="Next step is turning my wireframes into more polished prototypes using tools like Figma. This step pays dividends when it comes time for development, as a lot of smaller details (such as colors, sizing, animations) are ironed out. Not having to worry about context-switching between development and designing ensures the feature is delivered efficiently."
+          />
+          <NumberedCard
+            className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
+            number={4}
+            title="Implementation & Testing"
+            content="In my prior experience working at a startup, I had to be my own QA tester. I feel this gives me great insight into how to make my contributions more stable and robust. Comprehensive and informative error handling is essential to not only your users, but fellow developers that could one day be working on my code."
+          />
+        </div>
       </div>
 
       {/* About Section */}
-      <div className="flex flex-col dark:text-white max-w-[700px] mx-auto my-6 sm:my-12 p-4 sm:py-5 w-full transition-colors text-black">
-        <h1 className="text-2xl font-medium py-3">About</h1>
-        <div className="max-w-3xl mx-auto space-y-4">
-          <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+      <div className="flex flex-col dark:text-white max-w-4xl mx-auto my-6 sm:my-12 p-4 sm:py-5 w-full transition-colors text-black">
+        <h1 className="text-2xl font-medium py-3">A little about me</h1>
+        <div className="max-w-4xl mx-auto space-y-6">
+          <p className="mt-[12px] text-base leading-relaxed text-gray-700 dark:text-gray-300">
             During my sophomore year of college, I joined TrampleZone, a small
             startup where I collaborated with fellow students to enhance
-            HotSpots—a desktop and mobile application that utilized
-            OpenStreetMaps to enable users to rate and review local venues.
-          </p>
-
-          <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+            HotSpots—a desktop and mobile application that leveraged the
+            OpenStreetMaps API to enable users to rate and review local venues.
+            This served as one of my first experiences in a professional
+            development environment, where I got experience contributing to a
+            large codebase.
+            <br /> <br />
             Several months into my role, we embarked on developing MyChapter, a
-            new application focused on Greek life organizations. Under the
-            mentorship of founder Jim, I contributed to system architecture by
-            creating UML diagrams and took ownership of frontend design and
-            implementation. After graduating during the COVID-19 pandemic, I
-            transitioned to a full-time software engineering position at
-            TrampleZone, where I continued developing MyChapter and conducted
-            pilot testing with multiple fraternities at my alma mater.
-          </p>
-
-          <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-            {`Following my time at TrampleZone in early 2024, I invested time in independent 
-            learning and community involvement in Somerville. This period allowed me to gain 
-            a valuable perspective, renew my passion for software engineering, and enjoy an 
-            active lifestyle through local basketball leagues and exploring walking trails. 
-            I have since deepened my expertise by exploring new languages and frameworks, 
-            and I'm now excited to join a collaborative team focused on creating software 
-            that delivers real value to users. I'm currently based in Wilmot, NH, and am 
-            fully open to relocation for the right opportunity.`}
+            new application aimed at Greek life organizations. Under the
+            mentorship of the founder, I was in charge of detailing the system
+            architecture by creating UML and state diagrams, guided by user
+            stories and personas, all of which were refined in weekly meetings.
+            After deciding we had enough to begin the project, I took ownership
+            of frontend design and implementation. Because I was involved in
+            Greek life on campus, I was able to present the application to
+            colleagues on campus, as well as more formal presentation to
+            organizations like the Interfraternity Council (IFC) where I got
+            great experience with public speaking and presenting.
+            <br />
+            <br />
+            After graduating during the COVID-19 pandemic, I transitioned to a
+            full-time remote software engineering position at TrampleZone, where
+            I continued developing MyChapter and conducted pilot testing with
+            multiple fraternities at my alma mater.
+            <br />
+            <br />
+            Following my time at TrampleZone in early 2024, I took a step back
+            from programming, and spent time exploring other passions and
+            getting involved with the Somerville community. This period allowed
+            me to gain valuable perspective, renew my love for software
+            engineering, and enjoy an active lifestyle through local basketball
+            leagues and exploring walking trails. I have since deepened my
+            expertise by exploring new languages and frameworks, and I'm now
+            excited to join a collaborative team focused on creating software
+            that delivers real value to users. I'm currently based in Wilmot,
+            NH, and am willing to relocate for the right opportunity.
           </p>
         </div>
       </div>
