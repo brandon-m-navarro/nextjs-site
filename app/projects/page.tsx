@@ -9,6 +9,7 @@ interface Project {
   title: string;
   description: string;
   image: string;
+  mobileImage: string;
   link: string;
   tags: string[];
   github?: string;
@@ -18,23 +19,25 @@ interface Project {
 
 // Create Projects
 const projects: Project[] = [
-  {
+    {
     id: "1",
-    title: "NextJS Dashboard",
-    description: "A comprehensive dashboard application built as my introduction to Next.js...",
-    longDescription: "A comprehensive dashboard application built as my introduction to Next.js, following the official Next.js tutorial. This project served as a hands-on learning experience for modern React frameworks and full-stack development patterns. As a prerequisite, I also completed their React Foundations course, which covers the fundamentals of React, such as components, props, state, and hooks, and newer features like Server Components and Suspense.",
-    image: "/dashboard.png",
+    title: "SSO App Dashboard",
+    description: "",
+    longDescription: "This app serves as an OIDC provider to enable SSO for my apps across different subdomains. Creating this required a lot of research, reading through multiple RFCs (6749, 6750, 9700) to learn about Authorization Flow, PKCE, OIDC, and OIDC Providers. I also went through various implementations, initially starting with Auth0 and next-auth, then Okta. Unhappy with restrictions (running into paywalls), I then moved onto self-hosted solutions. I set up a central authority server using KeyCloak and Docker, before deciding to move to better-auth and act as my own OIDC Provider.",
+    image: "/app_dashboard.png",
+    mobileImage: "/login_mobile.png",
     link: "/",
-    tags: ["Authentication", "Next.js", "Postgres"],
-    github: "https://github.com/brandon-m-navarro/nextjs-dashboard",
-    liveDemo: "https://dash.bnav.dev/",
+    tags: ["Authentication", "SSO", "OAuth2", "OIDC", "Route 53 (AWS)"],
+    github: "https://github.com/brandon-m-navarro/app-dashboard",
+    liveDemo: "https://login.bnav.dev/",
   },
   {
     id: "2",
     title: "Task Management App",
     description: "A full-stack task management web application built with Next.js...",
-    longDescription: "A full-stack task management web application built with Next.js, featuring a responsive design and real-time optimistic updates. The app enables users to efficiently organize tasks within projects, with intuitive filtering, sorting, and seamless cross-device synchronization. Developed with a mobile-first approach, this project provided extensive practice with React, TypeScript, Next.js, and Tailwind CSS, particularly focusing on Next.js routing and React Context for efficient database operations with Postgres.",
+    longDescription: "A full-stack task management web application built with Next.js. The app allows for both public and private projects and interfaces with my SSO ecosystem. Developed with a mobile-first approach, this project provided extensive practice with React, TypeScript, Next.js, and Tailwind CSS. Uses Next.js routing and React Context for efficient database operations with Prisma.",
     image: "/todo.png",
+    mobileImage: "/mobile_todo.png",
     link: "/",
     tags: ["Next.js", "TypeScript", "Tailwind", "Postgres"],
     github: "https://github.com/brandon-m-navarro/nextjs-todo",
@@ -42,25 +45,39 @@ const projects: Project[] = [
   },
   {
     id: "3",
-    title: "Portfolio Site",
-    description: "A client-side application hosted on GitHub Pages...",
-    longDescription: "This project began as a vanilla JavaScript application, built with scalable ES6 classes and LocalStorage for persistent user preferences. It was then reimplemented in React/Next.js, serving as a practical comparison of foundational patterns versus modern framework-based development.",
-    image: "/portfolio.png",
-    link: "/",
-    tags: ["JS (ES6)", "CSS3", "SVG"],
-    github: "https://github.com/brandon-m-navarro/brandon-m-navarro.github.io",
-    liveDemo: "https://brandon-m-navarro.github.io/",
-  },
-  {
-    id: "4",
     title: "Duolingo Chinese → Anki Bridge",
     description: "",
-    longDescription: "I solved a key problem for language learners: Duolingo's missing flashcard feature. My tool makes it possible to create flashcards using the Anki platform from lesson vocabulary. It ethically complies with Duolingo's TOS by not scraping their copyrighted assets; instead, it extracts text and uses external TTS services to generate new audio, providing a legal and effective study aid. Check out the README on Github for a demo of the workflow.",
+    longDescription: "I solved a key problem for language learners: Duolingo's missing flashcard feature. My tool streamlines the creation of Anki flashcards from your DuoLingo lessons. It ethically complies with Duolingo's TOS by not scraping their copyrighted assets; instead, it extracts the hanzi characters along with their pinyin counterpart and english translations, then uses external TTS services to generate new audio. Check out the README on Github for a demo of the workflow.",
     image: "/duo.png",
+    mobileImage: "/duo.png",
     link: "/",
     tags: ["JS", "CSS3", "Python", "Userscripts"],
     github: "https://github.com/brandon-m-navarro/duolingo-chinese-anki-bridge/tree/main",
     liveDemo: "",
+  },
+  {
+    id: "4",
+    title: "Portfolio Site",
+    description: "",
+    longDescription: "This site began as a vanilla JavaScript application, built using ES6 classes and CSS. I then reimplemented the site using Next.js, React, Typescript, and TailwindCSS. This served as a practical comparison of how simple HTML/JS/CSS has evolved to modern framework-based development.",
+    image: "/js.png",
+    mobileImage: "/js_mobile.png",
+    link: "/",
+    tags: ["JS (ES6)", "CSS3", "SVG"],
+    github: "https://github.com/brandon-m-navarro/brandon-m-navarro.github.io",
+    liveDemo: "https://js.bnav.dev",
+  },
+  {
+    id: "5",
+    title: "NextJS Dashboard",
+    description: "",
+    longDescription: "A dashboard application built as my introduction to Next.js, following the official Next.js tutorial. This project served as a hands-on learning experience for modern React frameworks and full-stack development patterns. As a prerequisite, I also completed their React Foundations course, which covers the fundamentals of React, such as components, props, state, hooks, and newer features like Server Components and Suspense. I've since made changes to the app to allow it to also interface with my SSO ecosystem.",
+    image: "/dashboard.png",
+    mobileImage: "/dash_mobile.png",
+    link: "/",
+    tags: ["Authentication", "Next.js", "Postgres", "Typescript", "React"],
+    github: "https://github.com/brandon-m-navarro/nextjs-dashboard",
+    liveDemo: "https://dash.bnav.dev/",
   },
 ];
 
@@ -140,7 +157,7 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
           <div className="flex-1 mb-6 md:mb-0">
             <div className="relative h-64 md:h-full rounded-l-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
               <Image
-                src={project.image}
+                src={project.mobileImage}
                 alt={project.title}
                 fill
                 className="object-cover cursor-pointer"
