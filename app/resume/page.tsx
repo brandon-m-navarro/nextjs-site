@@ -30,6 +30,13 @@ export default function ResumePage() {
     <div
       className={`text-black dark:text-white w-full dark:bg-[#1A202C] py-1 ${lato.className}`}
     >
+      <div className="max-w-[800px] mx-auto my-[1em]">
+        <a href="/CV.pdf" download="CV.pdf">
+          <button className="flex-1 pointer-cursor max-w-[200px] bg-blue-600 text-white text-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            Download Resume
+          </button>
+        </a>
+      </div>
       <div className="flex flex-wrap  max-w-[800px] my-[12px] mx-auto box-border p-[12px] rounded-[4px] bg-black/[0.05] dark:bg-[#2d3748]">
         <div id="Face&Title" className="flex mb-[12px] basis-full items-center">
           <div className="flex overflow-hidden h-[50px] w-[50px] rounded-[4px] justify-center items-center">
