@@ -32,7 +32,7 @@ export default function SimpleCarousel ({ children }: SimpleCarouselProps) {
       {/* Slides Container */}
       <div className="flex transition-transform duration-500 ease-in-out"
            style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-        {Children.map(children, (child, index) => (
+        {Children.map(children, (child) => (
           <div className="min-w-full flex-shrink-0">
             {child}
           </div>
@@ -44,7 +44,7 @@ export default function SimpleCarousel ({ children }: SimpleCarouselProps) {
         <>
           <button
             onClick={goToPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors hidden sm:block"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -53,7 +53,7 @@ export default function SimpleCarousel ({ children }: SimpleCarouselProps) {
 
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors hidden sm:block"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -61,7 +61,7 @@ export default function SimpleCarousel ({ children }: SimpleCarouselProps) {
           </button>
 
           {/* Indicator */}
-          <div className="absolute bottom-[0px] left-1/2 -translate-x-1/2 flex space-x-2">
+          <div className="absolute bottom-[0px] left-1/2 -translate-x-1/2 flex space-x-2 hidden sm:block">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <button
                 key={index}
