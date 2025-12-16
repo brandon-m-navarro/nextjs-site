@@ -125,7 +125,7 @@ export default function Home() {
       <div className="w-full">
         <SimpleCarousel>
           {/* Images Gallery */}
-          <div className="flex flex-col p-4 h-fit mx-auto justify-center w-full sm:flex-row sm:max-w-4xl sm:h-[475px] gap-4">
+          <div className="flex flex-col p-4 h-fit mx-auto justify-center w-full sm:flex-row sm:max-w-4xl sm:h-[450px] gap-4">
             {/* Main Image - Left */}
             <div className="relative group h-64 sm:h-full sm:flex-1 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
               <Image
