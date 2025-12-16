@@ -4,6 +4,8 @@ import Image from "next/image";
 import Mountains from "./ui/mountains";
 import NumberedCard from "./ui/number-card";
 import NightSky from "./ui/night-sky";
+import AppleMusicEmbed from "./ui/apple-player";
+import SimpleCarousel from "./ui/simple-carousel";
 
 export default function Home() {
   return (
@@ -120,46 +122,51 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Images Gallery */}
-      <div className="flex flex-col p-4 h-fit mx-auto justify-center w-full sm:flex-row sm:max-w-4xl sm:h-[400px] gap-4">
-        {/* Main Image - Left */}
-        <div className="relative group h-64 sm:h-full sm:flex-1 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
-          <Image
-            src="/skydive.png"
-            fill
-            alt="Me skydiving in Swakopmund, Namibia during my IQP"
-            className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 640px) 100vw, 50vw"
-          />
-          <ImageCaption text="Skydiving in Swakopmund, Namibia (IQP)" />
-        </div>
+      <div className="w-full">
+        <SimpleCarousel>
+          {/* Images Gallery */}
+          <div className="flex flex-col p-4 h-fit mx-auto justify-center w-full sm:flex-row sm:max-w-4xl sm:h-[475px] gap-4">
+            {/* Main Image - Left */}
+            <div className="relative group h-64 sm:h-full sm:flex-1 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
+              <Image
+                src="/skydive.png"
+                fill
+                alt="Me skydiving in Swakopmund, Namibia during my IQP"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+              <ImageCaption text="Skydiving in Swakopmund, Namibia (IQP)" />
+            </div>
 
-        {/* Right Column - Two Images Stacked */}
-        <div className="flex flex-col h-auto sm:flex-1 gap-4">
-          {/* Top Right Image */}
-          <div className="relative group h-64 sm:h-1/2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
-            <Image
-              src="/Hout_Bay.JPG"
-              fill
-              alt="View of Hout Bay in Cape Town, South Africa"
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 640px) 100vw, 25vw"
-            />
-            <ImageCaption text="Hout Bay, Cape Town" />
-          </div>
+            {/* Right Column - Two Images Stacked */}
+            <div className="flex flex-col h-auto sm:flex-1 gap-4">
+              {/* Top Right Image */}
+              <div className="relative group h-64 sm:h-1/2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
+                <Image
+                  src="/Hout_Bay.JPG"
+                  fill
+                  alt="View of Hout Bay in Cape Town, South Africa"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, 25vw"
+                />
+                <ImageCaption text="Hout Bay, Cape Town" />
+              </div>
 
-          {/* Bottom Right Image */}
-          <div className="relative group h-64 sm:h-1/2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
-            <Image
-              src="/hershey.JPG"
-              fill
-              alt="Hershey the dog being photogenic"
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 640px) 100vw, 25vw"
-            />
-            <ImageCaption text="Hershey being photogenic" />
+              {/* Bottom Right Image */}
+              <div className="relative group h-64 sm:h-1/2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
+                <Image
+                  src="/hershey.JPG"
+                  fill
+                  alt="Hershey the dog being photogenic"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, 25vw"
+                />
+                <ImageCaption text="Hershey being photogenic" />
+              </div>
+            </div>
           </div>
-        </div>
+          <AppleMusicEmbed />
+        </SimpleCarousel>
       </div>
     </div>
   );

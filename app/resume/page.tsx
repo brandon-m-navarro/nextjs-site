@@ -169,17 +169,19 @@ export default function ResumePage() {
                     {categorySkills.map((skill) => (
                       <div key={skill.label} className="skill-rating">
                         <span>{skill.label}</span>
-                        <SkillRating
-                          rating={skill.rating}
-                          backgroundColor={clsx({
-                            "bg-skillBackgroundLight": !getIsDark(),
-                            "bg-skillBackgroundDark": getIsDark(),
-                          })}
-                          fillColor={clsx({
-                            "bg-skillFillLight": !getIsDark(),
-                            "bg-skillFillDark": getIsDark(),
-                          })}
-                        />
+                        <div className="">
+                          <SkillRating
+                            rating={skill.rating}
+                            backgroundColor={clsx({
+                              "bg-skillBackgroundLight": !getIsDark(),
+                              "bg-skillBackgroundDark": getIsDark(),
+                            })}
+                            fillColor={clsx({
+                              "bg-skillFillLight": !getIsDark(),
+                              "bg-skillFillDark": getIsDark(),
+                            })}
+                          />
+                        </div>
                       </div>
                     ))}
                   </div>
