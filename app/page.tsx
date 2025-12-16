@@ -124,7 +124,7 @@ export default function Home() {
 
       <div className="w-full">
         <SimpleCarousel>
-          {/* Images Gallery */}
+          {/* Images Gallery 1 */}
           <div className="flex flex-col p-4 h-fit mx-auto justify-center w-full sm:flex-row sm:max-w-4xl sm:h-[450px] gap-4">
             {/* Main Image - Left */}
             <div className="relative group h-64 sm:h-full sm:flex-1 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
@@ -166,6 +166,48 @@ export default function Home() {
             </div>
           </div>
           <AppleMusicEmbed />
+
+          {/* Images Gallery 2 */}
+          <div className="flex flex-col p-4 h-fit mx-auto justify-center w-full sm:flex-row sm:max-w-4xl sm:h-[450px] gap-4">
+            {/* Main Image - Left */}
+            <div className="relative group h-64 sm:h-full sm:flex-1 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
+              <Image
+                src="/Tate_Village.jpeg"
+                fill
+                alt="Photo of visiting friends in Namibia"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+              <ImageCaption text="Photo of visiting friends in Namibia" />
+            </div>
+
+            {/* Right Column - Two Images Stacked */}
+            <div className="flex flex-col h-auto sm:flex-1 gap-4">
+              {/* Top Right Image */}
+              <div className="relative group h-64 sm:h-1/2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
+                <Image
+                  src="/Luna_Napping.jpeg"
+                  fill
+                  alt="Luna the Shiba"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  sizes=""
+                />
+                <ImageCaption text="Luna Napping" />
+              </div>
+
+              {/* Bottom Right Image */}
+              <div className="relative group h-64 sm:h-1/2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
+                <Image
+                  src="/Tamarindo_Beach.jpeg"
+                  fill
+                  alt="Photo of visiting friends in Namibia"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, 25vw"
+                />
+                <ImageCaption text="Tamarindo Beach, Costa Rica" />
+              </div>
+            </div>
+          </div>
         </SimpleCarousel>
       </div>
     </div>
