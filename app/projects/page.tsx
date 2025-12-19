@@ -182,10 +182,10 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40" />
 
         {/* Expanded Card */}
-        <div className="fixed top-8 left-8 right-8 bottom-8 md:top-16 md:left-16 md:right-16 md:bottom-16 bg-white dark:bg-[#2d3748] rounded-xl shadow-2xl z-50 flex flex-col md:flex-row overflow-hidden">
+        <div className="fixed top-8 left-8 right-8 bottom-8 md:top-16 md:left-16 md:right-16 md:bottom-16 bg-white dark:bg-[#2d3748] rounded-xl shadow-2xl z-50 flex flex-col sm:flex-row overflow-hidden">
           {/* Image Section */}
-          <div className="flex-1 mb-6 md:mb-0">
-            <div className="relative h-64 md:h-full rounded-l-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+          <div className="flex-1 mb-6 sm:mb-0 sm:block hidden">
+            <div className="relative h-64 sm:h-full rounded-l-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
               <Image
                 src={project.mobileImage}
                 alt={project.title}
@@ -216,7 +216,7 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-6 sm:block hidden">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
