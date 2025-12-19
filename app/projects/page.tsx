@@ -79,6 +79,18 @@ const projects: Project[] = [
     github: "https://github.com/brandon-m-navarro/nextjs-dashboard",
     liveDemo: "https://dash.bnav.dev/",
   },
+  {
+    id: "6",
+    title: "Escape",
+    description: "",
+    longDescription: "Escape is a family of board games originally developed in 7 weeks for my CS4233: Object-Oriented Analysis & Design term project. This project focused on designing an OO program and working through iterations of new rules, pieces, and board types. Since originally implementing 5 years ago, I've recently returned to the project to refresh what I'd learned in a 4000-level course at WPI and make a number of improvements. The key improvements include: eliminating the use of raw types, fixing wildcard capture issues, fixing all failing tests, and creating a visualization tool to more easily inspect initialized boards. It's important to note there is no GUI for this game, so it cannot be played as one would think. The board game concept was used to create a project where OO principles and patterns can be implemented.",
+    image: "/escape_vis.png",
+    mobileImage: "/escape.png",
+    link: "/",
+    tags: ["Java", "OO Design", "JUnit"],
+    github: "https://github.com/brandon-m-navarro/escape",
+    liveDemo: "",
+  },
 ];
 
 export default function ProjectsPage() {
