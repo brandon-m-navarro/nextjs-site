@@ -99,7 +99,7 @@ const projects: Project[] = [
     id: "7",
     title: "Multi-Camera Tele-Nursing Robot (2019 - 2020)",
     description: "",
-    longDescription: "This project served as my MQP, WPI's version of a senior capstone. Worked within a team of 6 (with multiple advisors) to conduct a study which explored autonomous camera control and selection on a TRINA robot using a VR headset. By reading the inertial measurement unit (IMU) data from the VR headset (through Unity and GStreamer) and passing that data to Python and C++ scripts, we were able to interface with ROS to control TRINA in real-time. Click the button in the top-right of the adjacent image to expand the poster we submitted that summarizes our project.",
+    longDescription: "This project served as my MQP, WPI's version of a senior capstone. Worked within a team of 6 (with multiple advisors) to conduct a study which explored autonomous camera control and selection on a TRINA robot using a VR headset. By reading the inertial measurement unit (IMU) data from the VR headset (through Unity and GStreamer) and passing that data to Python and C++ scripts, we were able to interface with ROS to control TRINA in real-time. If on desktop, click the button in the top-right of the adjacent image to expand the poster we submitted that summarizes our project.",
     image: "/mqp-poster.svg",
     mobileImage: "/trina.png",
     link: "",
