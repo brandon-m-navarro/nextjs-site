@@ -31,6 +31,7 @@ const projects: Project[] = [
     tags: ["Authentication", "SSO", "OAuth2", "OIDC", "Route 53 (AWS)"],
     github: "https://github.com/brandon-m-navarro/app-dashboard",
     liveDemo: "https://login.bnav.dev/",
+    demoLabel: "View Live Demo →"
   },
   {
     id: "2",
@@ -96,17 +97,6 @@ const projects: Project[] = [
   },
   {
     id: "7",
-    title: "TTB Application (2018)",
-    description: "",
-    longDescription: "Worked within a team of 8 to develop an application for the Alcohol and Tobacco Tax and Trade Bureau (TTB) to facilitate the process of submitting and reviewing new products; this was the most work-intensive class I took at WPI. Over 7 weeks, the course simulated what it was like being apart of a software development team following Agile methodologies. This meant daily standup meetings to report on progress and delegate work to meet iteration deadlines. My assigned role was software engineer/assistent document analyst, meaning I was involved in creating UML/sequence diagrams, documenting the codebase, helping design the UI, and makng code contributions. The course culminated in a presenting our application to a panel of judges, comprised of professors and government officials.",
-    image: "/ttb.png",
-    mobileImage: "/ttb.png",
-    link: "/",
-    tags: ["Java", "OO Design", "Agile", "UX & UI"],
-    github: "https://github.com/Benmw99/TeamE3733TTB2",
-  },
-  {
-    id: "8",
     title: "Multi-Camera Tele-Nursing Robot (2019 - 2020)",
     description: "",
     longDescription: "This project served as my major qualifying project, which is essentially a senior capstone project. Worked within a team of 7 with an advisor to conduct a study which explored autonomous camera control and selection on a TRINA robot using a VR headset. Was involved in creating the software used to control the cameras by reading the inertial measurement unit (IMU) data from the VR headset using Unity and GStreamer library. Using C++ and Python scripts to interface with ROS, our team was able to control TRINAs arms and main camera using the VR headset and controllers. Also helped in running ~10 participants through the study. Click the button in the top-right of the adjacent image to expand the poster we submitted that summarizes our project.",
@@ -119,7 +109,7 @@ const projects: Project[] = [
     demoLabel: "View Paper →"
   },
   {
-    id: "9",
+    id: "8",
     title: "Mathematics Tutoring Center at NUST (2019)",
     description: "",
     longDescription: "This project served as my interactive qualifying project, allowing me to work within an interdisciplinary team to help solve a need that existed at the intersection of science and society. Our team of 4 were tasked with creating and implementing mathematics e-learning modules at the Namibia University of Science and Technology. Through interviews and surveys with university staff and students, we were able to to create and refine these modules, providing an effective supplemental learning tool. My contributions to the project were creating the modules themselves using a platform developed by a WPI professor. Writing responsibilities for the final paper were shared equally among the team, with myself acting as the primary editor.",
@@ -130,6 +120,17 @@ const projects: Project[] = [
     github: "",
     liveDemo: "https://digital.wpi.edu/concern/student_works/x633f145v?locale=en",
     demoLabel: "View Paper →"
+  },
+  {
+    id: "9",
+    title: "TTB Application (2018)",
+    description: "",
+    longDescription: "Worked within a team of 8 to develop an application for the Alcohol and Tobacco Tax and Trade Bureau (TTB) to facilitate the process of submitting and reviewing new products; this was the most work-intensive class I took at WPI. Over 7 weeks, the course simulated what it was like being apart of a software development team following Agile methodologies. This meant daily standup meetings to report on progress and delegate work to meet iteration deadlines. My assigned role was software engineer/assistent document analyst, meaning I was involved in creating UML/sequence diagrams, documenting the codebase, helping design the UI, and makng code contributions. The course culminated in a presenting our application to a panel of judges, comprised of professors and government officials.",
+    image: "/ttb.png",
+    mobileImage: "/ttb.png",
+    link: "/",
+    tags: ["Java", "OO Design", "Agile", "UX & UI"],
+    github: "https://github.com/Benmw99/TeamE3733TTB2",
   },
 ];
 
