@@ -71,7 +71,7 @@ export default function Home() {
             className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
             number={4}
             title="Implementation & Testing"
-            content={`In my prior experience working at a startup, I had to be my own QA tester. I feel this gives me great insight into how to make my contributions more stable and robust. Comprehensive and informative error handling is essential to not only your users, but fellow developers that could one day be working on my code.`}
+            content={`In my prior experience working at a startup, I had to be my own QA tester. I feel this gives me great insight into how to make my contributions more stable and robust. Comprehensive and informative error handling is essential to not only users, but fellow developers that could one day be working on my code.`}
           />
         </div>
       </div>
@@ -97,27 +97,28 @@ export default function Home() {
             After deciding we had enough to begin the project, I took ownership
             of frontend design and implementation. Because I was involved in
             Greek life on campus, I was able to present the application to
-            colleagues on campus, as well as more formal presentation to
-            organizations like the Interfraternity Council (IFC) where I got
-            great experience with public speaking and presenting.`}
+            colleagues on campus. Later into development, I also gave more
+            formal presentations to organizations like the Interfraternity Council
+            and Alumni Counsil, where I got great experience with public speaking
+            and presenting.`}
             <br />
             <br />
             {`After graduating during the COVID-19 pandemic, I transitioned to a
             full-time remote software engineering position at TrampleZone, where
-            I continued developing MyChapter and conducted pilot testing with
-            multiple fraternities at my alma mater.`}
+            I continued developing MyChapter. Eventually our team was able to begin
+            pilot testing with multiple fraternities at my alma mater, where we
+            gained modest adoption.`}
             <br />
             <br />
             {`Following my time at TrampleZone in early 2024, I took a step back
             from programming, and spent time exploring other passions and
-            getting involved with the Somerville community. This period allowed
+            getting involved in my local Somerville community. This period allowed
             me to gain valuable perspective, renew my love for software
-            engineering, and enjoy an active lifestyle through local basketball
-            leagues and exploring walking trails. I have since deepened my
-            expertise by exploring new languages and frameworks, and I'm now
+            engineering, and enjoy an active lifestyle. I have since deepened my
+            expertise by exploring new languages and frameworks. I'm now looking and
             excited to join a collaborative team focused on creating software
             that delivers real value to users. I'm currently based in Wilmot,
-            NH, and am willing to relocate for the right opportunity.`}
+            NH, but am willing to relocate for the right opportunity.`}
           </p>
         </div>
       </div>
