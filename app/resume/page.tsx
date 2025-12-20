@@ -255,7 +255,7 @@ export default function ResumePage() {
                 </span>
               </div>
               <ul className="text-[12px] list-disc pl-[40px]">
-                <li>Led the PR commitee for 2 years.</li>
+                <li>Led the PR commitee for 2 years, during which WPI awarded us the Chapter Excellence Award.</li>
                 <li>
                   Contributed to creating and maintaining our current{" "}
                   <a
