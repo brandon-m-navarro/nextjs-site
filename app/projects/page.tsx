@@ -216,11 +216,11 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-6 sm:block hidden">
+            <div className="flex flex-wrap gap-2 wrap-break-word mb-6 sm:flex hidden">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
+                  className="px-3 py-1 box-border bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
                 >
                   {tag}
                 </span>
