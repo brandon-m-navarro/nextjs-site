@@ -196,8 +196,8 @@ export default function ResumePage() {
             </span>
           </div>
 
-          <div className="flex items-center mb-[12px]">
-            <div className="flex flex-col flex-[0.5_0.5_0]">
+          <div className="flex mb-[12px]">
+            <div className="flex flex-col flex-[0.5_0.5_0] justify-between">
               <div className="flex items-center mb-[6px]">
                 <Image
                   src={clsx({
@@ -233,7 +233,7 @@ export default function ResumePage() {
           </div>
 
           {/*Campus Involvement*/}
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-[12px]">
             <span className="text-[14px] font-[700]">Campus Involvement</span>
 
             {/* Sigma Pi */}
@@ -256,66 +256,23 @@ export default function ResumePage() {
                 </span>
               </div>
               <ul className="text-[12px] list-disc pl-[40px]">
-                <li>Active member and former PR chair</li>
+                <li>Led the PR commitee for 2 years.</li>
                 <li>
-                  Was on the WebTech committee for 2 years, which made drastic
-                  improvements to our{" "}
+                  Contributed to creating and maintaining our current {" "}
                   <a
-                    className="dark:text-[#faebd7] text-[#551A8B]"
+                    className="dark:text-[#faebd7] text-[#551A8B] underline"
                     href="https://sigmapigammaiota.org/"
                   >
                     chapter site
                   </a>
+                  .
                 </li>
                 <li>
-                  Helped organize a multi-day campus event, Amazing Day, to
-                  raise awareness for mental health and suicide in the WPI
-                  community
+                  Was an event coordinator for Amazing Day, an annual week-long campus event that
+                  raised awareness for mental health and suicide in the WPI community.
                 </li>
                 <li>
-                  Volunteered weekly at a local food pantry, Mustard Seed to
-                  help setup, cook, & clean
-                </li>
-              </ul>
-            </div>
-
-            {/* SPARC */}
-            <div className="flex flex-col mb-[1em]">
-              <div className="flex items-center h-[50px]">
-                <div className="h-[34px] w-[50px] rounded-[2px] bg-white/95 overflow-hidden justify-center items-center">
-                  <Image
-                    src={"/sparc_t.png"}
-                    height={34}
-                    width={50}
-                    alt="SPARC"
-                    className="translate-y-[-8px]"
-                  />
-                </div>
-                <span className="text-[14px] ml-[6px]">SPARC Member</span>
-                <span className="whitespace-nowrap ml-auto italic text-[12px]">
-                  2018 - 2020
-                </span>
-              </div>
-              <ul className="text-[12px] list-disc pl-[40px]">
-                <li>
-                  Was an active member of a SPARC, a student run committee that
-                  interfaced with college admins and hosted campus events to
-                  raise awareness and provide resources for sexual assualt
-                  victims in the WPI community
-                </li>
-                <li>
-                  Helped run the annual, campus-wide event,{" "}
-                  <a
-                    className="dark:text-[#faebd7] text-[#551A8B]"
-                    href="https://www.wpi.edu/news/take-back-night"
-                  >
-                    Take Back the Night
-                  </a>
-                </li>
-                <li>
-                  Created and distributed electronic surveys to gauge students
-                  sentiments about safety on campus which were then presented to
-                  WPI admins
+                  Volunteered bi-weekly at the local food pantry to help prep, cook, and clean on weekends.
                 </li>
               </ul>
             </div>
@@ -326,7 +283,7 @@ export default function ResumePage() {
               Professional Experience
             </span>
           </div>
-          <div className="flex mb-[6px]">
+          <div className="flex mb-[12px]">
             <div className="flex flex-col flex-[0.5_0.5_0] justify-between">
               <div className="flex items-center mb-[6px]">
                 <Image
@@ -367,12 +324,18 @@ export default function ResumePage() {
             <span className="text-[12px] w-[95%] m-auto text-left">
               Worked closely with the founder of the company in planning and
               developing a single page application that is currently available
-              across mobile and desktop. I was involved in the initial planning
-              for the application and created most of the model classes, UI
-              components, and panels on the frontend. I also created promotional
-              content and app store materials using various Adobe tools along
-              with Figma. Throughout my time there I also trained several new
-              hires and was involved in the recruitment process.
+              across mobile and desktop. Led in the initial planning
+              for the application and created all frontend model classes and UI
+              components. <br/><br/>
+
+              Working at a startup meant wearing many hats, including programmer, marketer, instructor, and recruiter:
+              <br/>
+              <ul className="text-[12px] list-disc pl-[12px] mt-[6px]">
+                <li>Designed and implemented unique features aimed at greek life organizations.</li>
+                <li>Created promotional content for social media; designed all app store visual assets to improve app store optimization.</li>
+                <li>Helped mentor several new hires, getting them through setup, introducing them to the codebase, and reviewing their code.</li>
+                <li>Was involved in the recruitment process where I would help conduct interviews with prospective hires.</li>
+              </ul>
             </span>
             <div className="flex mt-[12px] ml-[12px] mb-[12px] md:mb-0">
               <Image
