@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import ClientBody from "./ClientBody";
+import ClientBody from "./client-body";
 
 export const metadata: Metadata = {
   title: "Brandon Navarro",
