@@ -123,7 +123,7 @@ const projects: Project[] = [
   },
   {
     id: "9",
-    title: "TTB Application (2018)",
+    title: "TTB Label Submission Application (2018)",
     description: "",
     longDescription: "Worked within a team of 8 to develop an application for the Alcohol and Tobacco Tax and Trade Bureau (TTB) to facilitate the process of submitting and reviewing new products; this was the most work-intensive class I took at WPI. Over 7 weeks, the course simulated what it was like being apart of a software development team following Agile methodologies. This meant daily standup meetings to report on progress and delegate work to meet iteration deadlines. My assigned role was software engineer/assistent document analyst, meaning I was involved in creating UML/sequence diagrams, documenting the codebase, helping design the UI, and makng code contributions. The course culminated in a presenting our application to a panel of judges, comprised of professors and government officials.",
     image: "/ttb.png",
