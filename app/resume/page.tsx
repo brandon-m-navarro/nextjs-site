@@ -3,13 +3,10 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useContext } from "react";
 import ThemeContext from "../store/ThemeContext";
-
 import localFont from "next/font/local";
 import SkillRating from "../ui/skill-rating";
-
 import { skillsByCategory } from "../data/skills";
-
-import "@/app/ui/global.css";
+import "@/app/globals.css";
 
 const josefinSansLight = localFont({
   src: "../fonts/added/jsans-light.woff",
@@ -29,7 +26,7 @@ export default function ResumePage() {
     <div
       className={`text-black dark:text-white w-full dark:bg-[#1A202C] py-1 ${lato.className}`}
     >
-      <div className="max-w-[800px] mx-auto my-[1em]">
+      <div className="max-w-[800px] mx-auto my-[1em] resume-button">
         <a href="/CV.pdf" download="CV.pdf">
           <button className="flex-1 pointer-cursor max-w-[200px] bg-blue-600 text-white text-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
             Download Resume
@@ -156,37 +153,39 @@ export default function ResumePage() {
                 SKILLS
               </span>
             </div>
-            {Object.entries(skillsByCategory).map(
-              ([category, categorySkills]) => (
-                <div key={category}>
-                  <span
-                    className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}
-                  >
-                    {category}
-                  </span>
-                  <div className="flex flex-col">
-                    {categorySkills.map((skill) => (
-                      <div key={skill.label} className="skill-rating">
-                        <span>{skill.label}</span>
-                        <div className="">
-                          <SkillRating
-                            rating={skill.rating}
-                            backgroundColor={clsx({
-                              "bg-skillBackgroundLight": !getIsDark(),
-                              "bg-skillBackgroundDark": getIsDark(),
-                            })}
-                            fillColor={clsx({
-                              "bg-skillFillLight": !getIsDark(),
-                              "bg-skillFillDark": getIsDark(),
-                            })}
-                          />
+            <div className="skill-rating-container">
+              {Object.entries(skillsByCategory).map(
+                ([category, categorySkills]) => (
+                  <div key={category} className="skill-rating-section">
+                    <span
+                      className={`text-left mb-[12px] text-[12px] leading-[24px] ${latoBold.className}`}
+                    >
+                      {category}
+                    </span>
+                    <div className="flex flex-col">
+                      {categorySkills.map((skill) => (
+                        <div key={skill.label} className="skill-rating">
+                          <span>{skill.label}</span>
+                          <div className="">
+                            <SkillRating
+                              rating={skill.rating}
+                              backgroundColor={clsx({
+                                "bg-skillBackgroundLight": !getIsDark(),
+                                "bg-skillBackgroundDark": getIsDark(),
+                              })}
+                              fillColor={clsx({
+                                "bg-skillFillLight": !getIsDark(),
+                                "bg-skillFillDark": getIsDark(),
+                              })}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )
-            )}
+                )
+              )}
+            </div>
           </div>
         </div>
         <div className="flex-[1_1_100%] md:flex-[0.75_1_0%] px-[4px]">
@@ -258,7 +257,7 @@ export default function ResumePage() {
               <ul className="text-[12px] list-disc pl-[40px]">
                 <li>Led the PR commitee for 2 years.</li>
                 <li>
-                  Contributed to creating and maintaining our current {" "}
+                  Contributed to creating and maintaining our current{" "}
                   <a
                     className="dark:text-[#faebd7] text-[#551A8B] underline"
                     href="https://sigmapigammaiota.org/"
@@ -268,11 +267,13 @@ export default function ResumePage() {
                   .
                 </li>
                 <li>
-                  Was an event coordinator for Amazing Day, an annual week-long campus event that
-                  raised awareness for mental health and suicide in the WPI community.
+                  Was an event coordinator for Amazing Day, an annual week-long
+                  campus event that raised awareness for mental health and
+                  suicide in the WPI community.
                 </li>
                 <li>
-                  Volunteered bi-weekly at the local food pantry to help prep, cook, and clean on weekends.
+                  Volunteered bi-weekly at the local food pantry to help prep,
+                  cook, and clean on weekends.
                 </li>
               </ul>
             </div>
@@ -324,17 +325,30 @@ export default function ResumePage() {
             <span className="text-[12px] w-[95%] m-auto text-left">
               Worked closely with the founder of the company in planning and
               developing a single page application that is currently available
-              across mobile and desktop. Led in the initial planning
-              for the application and created all frontend model classes and UI
-              components. <br/><br/>
-
-              Working at a startup meant wearing many hats, including programmer, marketer, instructor, and recruiter:
-              <br/>
+              across mobile and desktop. Led in the initial planning for the
+              application and created all frontend model classes and UI
+              components. <br />
+              <br />
+              Working at a startup meant wearing many hats, including
+              programmer, marketer, instructor, and recruiter:
+              <br />
               <ul className="text-[12px] list-disc pl-[12px] mt-[6px]">
-                <li>Designed and implemented unique features aimed at greek life organizations.</li>
-                <li>Created promotional content for social media; designed all app store visual assets to improve app store optimization.</li>
-                <li>Helped mentor several new hires, getting them through setup, introducing them to the codebase, and reviewing their code.</li>
-                <li>Was involved in the recruitment process where I would help conduct interviews with prospective hires.</li>
+                <li>
+                  Designed and implemented unique features aimed at greek life
+                  organizations.
+                </li>
+                <li>
+                  Created promotional content for social media; designed all app
+                  store visual assets to improve app store optimization.
+                </li>
+                <li>
+                  Helped mentor several new hires, getting them through setup,
+                  introducing them to the codebase, and reviewing their code.
+                </li>
+                <li>
+                  Was involved in the recruitment process where I would help
+                  conduct interviews with prospective hires.
+                </li>
               </ul>
             </span>
             <div className="flex mt-[12px] ml-[12px] mb-[12px] md:mb-0">

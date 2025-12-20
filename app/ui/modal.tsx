@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Image from "next/image";
-import "@/app/ui/global.css";
+import "@/app/globals.css";
 import ThemeContext from "../store/ThemeContext";
 import clsx from "clsx";
 import localFont from "next/font/local";
