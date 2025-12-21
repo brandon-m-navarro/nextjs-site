@@ -326,7 +326,7 @@ export default function ResumePage() {
               Worked closely with the founder of the company in planning and
               developing a single page application that is currently available
               across mobile and desktop. Led in the initial planning for the
-              application and created all frontend model classes and UI
+              application and created frontend model classes and UI
               components. <br />
               <br />
               Working at a startup meant wearing many hats, including
