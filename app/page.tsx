@@ -81,18 +81,21 @@ export default function Home() {
         <h1 className="text-2xl font-medium py-3">A little about me</h1>
         <div className="max-w-4xl mx-auto space-y-6">
           <p className="mt-[12px] text-base leading-relaxed text-gray-700 dark:text-gray-300">
-            {`During my sophomore year of college, I joined the startup TrampleZone. There, I collaborated with fellow students to enhance HotSpots—a desktop and mobile application that leverages the OpenStreetMaps API to enable users to rate and review local venues. This served as my first professional development experience, where I contributed to a large, existing codebase.`}
+            {`During my sophomore year of college, I joined the startup TrampleZone.
+            There, I collaborated with fellow students to enhance HotSpots—a desktop
+            and mobile application that leverages the OpenStreetMaps API to enable
+            users to rate and review local venues. This served as my first professional
+            development experience, where I contributed to a large, existing codebase.`}
             <br /> <br />
-            {`Several months into my role, we embarked on developing MyChapter, a
-            new application aimed at Greek life organizations. Under the
-            mentorship of the founder, I was in charge of detailing the system
-            architecture by creating UML and model diagrams that were refined in weekly meetings.
-            After deciding we had enough to begin the project, I took ownership
-            of frontend design and implementation. Because I was involved in
-            Greek life on campus, I was able to present the application to
-            colleagues on campus. Later into development, I also gave more
-            formal presentations to organizations like the Interfraternity Council,
-            where I got great experience with public speaking and presenting.`}
+            {`Several months into my role, we began developing MyChapter, a
+            new application for Greek life organizations. Under the founder's
+            mentorship, I helped design the system architecture, creating and refining
+            UML and model diagrams through an iterative weekly review process. Once
+            the planning phase was complete, I took ownership of the frontend design
+            and implementation. Leveraging my involvement in campus Greek life, I
+            introduced the application to peers and later delivered formal presentations
+            to organizations like the Interfraternity Council. This provided me with
+            valuable experience in public speaking and stakeholder presentations.`}
             <br />
             <br />
             {`After graduating during the COVID-19 pandemic, I transitioned to a
