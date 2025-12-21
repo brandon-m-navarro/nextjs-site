@@ -65,7 +65,7 @@ export default function Home() {
             className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
             number={3}
             title="Refinement & Prototyping"
-            content={`Next step is turning my wireframes into more polished prototypes using tools like Figma. This step pays dividends when it comes time for development, as a lot of smaller details (such as colors, sizing, animations) are ironed out. Not having to worry about context-switching between development and designing ensures the feature is delivered efficiently.`}
+            content={`Next step is turning my wireframes into more polished prototypes using tools like Figma. This step pays dividends when it comes time for development, as a lot of smaller details (such as colors, sizing, animations) are ironed out. Not having to worry about context-switching between development and design ensures the feature is delivered efficiently.`}
           />
           <NumberedCard
             className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
