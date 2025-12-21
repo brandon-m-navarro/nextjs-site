@@ -32,6 +32,13 @@ body.modal-open .image-modal {
   pointer-events: auto;
 }
 
+.skill-rating-section > span:first-child {
+  border-bottom: rgb(0, 0, 0, 0.25) 1px solid;
+}
+.dark .skill-rating-section > span:first-child {
+  border-bottom: rgb(255, 255, 255, 0.5) 1px solid;
+}
+
 /* Mobile adjustments - show expand button always on mobile */
 @media (max-width: 767px) {
   .group-hover\:opacity-100 {
@@ -56,13 +63,6 @@ body.modal-open .image-modal {
   }
   .skill-rating-container > div:nth-child(odd) {
     padding-right: 12px;
-  }
-
-  .skill-rating-section > span:first-child {
-    border-bottom: rgb(0, 0, 0, 0.25) 1px solid;
-  }
-  .dark .skill-rating-section > span:first-child {
-    border-bottom: rgb(255, 255, 255, 0.5) 1px solid;
   }
   .skill-rating-container {
     display: grid;
