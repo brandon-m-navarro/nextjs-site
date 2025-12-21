@@ -338,7 +338,7 @@ export default function ResumePage() {
                   organizations.
                 </li>
                 <li>
-                  Created promotional content for social media; designed all app
+                  Created promotional content for social media; designed app
                   store visual assets to improve app store optimization.
                 </li>
                 <li>
