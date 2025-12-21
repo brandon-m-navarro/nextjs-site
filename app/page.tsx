@@ -81,9 +81,9 @@ export default function Home() {
         <h1 className="text-2xl font-medium py-3">A little about me</h1>
         <div className="max-w-4xl mx-auto space-y-6">
           <p className="mt-[12px] text-base leading-relaxed text-gray-700 dark:text-gray-300">
-            {`During my sophomore year of college, I joined TrampleZone, a small
+            {`During my sophomore year of college, I joined TrampleZone, a
             startup where I collaborated with fellow students to enhance
-            HotSpots—a desktop and mobile application that leveraged the
+            HotSpots—a desktop and mobile application that leverages the
             OpenStreetMaps API to enable users to rate and review local venues.
             This served as one of my first experiences in a professional
             development environment, where I got experience contributing to a
