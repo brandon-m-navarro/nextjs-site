@@ -71,7 +71,7 @@ export default function Home() {
             className="p-[24px] rounded-[12px] dark:bg-[#374151] dark:border-[#4b5563] border-[#e5e7eb] border-[1px] m-4 flex-1 basis-full sm:basis-[calc(50%-2rem)] min-w-80 max-w-md lg:max-w-lg xl:max-w-none hover:transform hover:-translate-y-2 transition-all duration-300"
             number={4}
             title="Implementation & Testing"
-            content={`In my prior experience working at a startup, I had to be my own QA tester. I feel this gives me great insight into how to make my contributions more stable and robust. Comprehensive and informative error handling is essential to not only users, but fellow developers that could one day be working on my code.`}
+            content={`In my prior experience working at a startup, I had to be my own QA tester. I feel this gives me great insight into how to make my contributions more stable and robust. Comprehensive and informative error handling is essential to not only users, but fellow developers who could one day be working on my code.`}
           />
         </div>
       </div>
@@ -92,20 +92,18 @@ export default function Home() {
             {`Several months into my role, we embarked on developing MyChapter, a
             new application aimed at Greek life organizations. Under the
             mentorship of the founder, I was in charge of detailing the system
-            architecture by creating UML and state diagrams, guided by user
-            stories and personas, all of which were refined in weekly meetings.
+            architecture by creating UML and model diagrams that were refined in weekly meetings.
             After deciding we had enough to begin the project, I took ownership
             of frontend design and implementation. Because I was involved in
             Greek life on campus, I was able to present the application to
             colleagues on campus. Later into development, I also gave more
-            formal presentations to organizations like the Interfraternity Council
-            and Alumni Counsil, where I got great experience with public speaking
-            and presenting.`}
+            formal presentations to organizations like the Interfraternity Council,
+            where I got great experience with public speaking and presenting.`}
             <br />
             <br />
             {`After graduating during the COVID-19 pandemic, I transitioned to a
-            full-time remote software engineering position at TrampleZone, where
-            I continued developing MyChapter. Eventually our team was able to begin
+            full-time, remote software engineering position at TrampleZone. Continuing
+            with MyChapter's developement, eventually our team was able to begin
             pilot testing with multiple fraternities at my alma mater, where we
             gained modest adoption.`}
             <br />
