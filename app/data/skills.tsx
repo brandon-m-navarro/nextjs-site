@@ -1,7 +1,7 @@
 export enum SkillCategory {
   PROGRAMMING = "Programming",
   OS = "Operating Systems",
-  FRAMEWORKS = "Frameworks",
+  FRAMEWORKS = "Frameworks/Libraries",
   TOOLS = "Tools",
 }
 interface Skill {
