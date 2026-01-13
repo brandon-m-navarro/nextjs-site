@@ -124,7 +124,7 @@ export default function Mountains({
               })}
             ></circle>
           </g>
-          <g id="paths">
+          <g id="paths" style={{ transform: "scaleX(142%)" }}>
             <path
               d="
                                 M 0, 417

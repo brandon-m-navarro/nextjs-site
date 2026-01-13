@@ -191,7 +191,8 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
     return (
       <div>
         {/* Backdrop */}
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" />
+        <div onClick={() => {onToggle(project.id)}}
+             className="fixed inset-0 bg-black bg-opacity-50 z-50" />
 
         {/* Expanded Card */}
         <div className="fixed top-8 left-8 right-8 bottom-8 md:top-16 md:left-16 md:right-16 md:bottom-16 bg-white dark:bg-[#2d3748] rounded-xl shadow-2xl z-50 flex flex-col sm:flex-row overflow-hidden">
