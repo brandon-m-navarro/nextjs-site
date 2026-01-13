@@ -50,7 +50,7 @@ const projects: Project[] = [
     id: "10",
     title: "Interview Prep",
     description: "",
-    longDescription: "A collection of recent coding and concept problems I've compiled and completed. Project is structured in a way that allows others to clone the repo, implement their own solutions, and run them against Mocha/Chai tests.",
+    longDescription: "A collection of coding and concept problems I've recently completed. This project is structured in a way that allows other developers to use it as a learning/practice tool. While most of these problems are common across different sites, all coding solutions were implemented by me. The solutions contain comments to help provide clarity for why certain algorithms were used, along with their time/space complexity, where appropriate.",
     image: "/interview-prep.png",
     mobileImage: "/interview-prep.png",
     link: "/",
@@ -60,7 +60,7 @@ const projects: Project[] = [
   },
   {
     id: "3",
-    title: "Duolingo Chinese → Anki Bridge",
+    title: "Duolingo Chinese Anki Bridge",
     description: "",
     longDescription: "I enjoy using Duolingo, but not having a dedicated flashcard feature for vocab felt a bit limiting. My tool streamlines the creation of Anki flashcards from your lessons. It complies with Duolingo's TOS by not scraping their copyrighted assets; instead, it extracts the Hanzi characters along with their Pinyin counterpart and English translations, then uses external TTS services to generate new audio. Check out the README on GitHub for a demo of the workflow.",
     image: "/duo.png",
