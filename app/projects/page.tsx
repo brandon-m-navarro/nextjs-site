@@ -46,6 +46,18 @@ const projects: Project[] = [
     liveDemo: "https://todo.bnav.dev/",
     demoLabel: "View Live Demo →"
   },
+    {
+    id: "10",
+    title: "Interview Prep",
+    description: "",
+    longDescription: "A collection of recent coding and concept problems I've compiled and completed. Project is structured in a way that allows others to clone the repo, implement their own solutions, and run them against Mocha/Chai tests.",
+    image: "/interview-prep.png",
+    mobileImage: "/interview-prep.png",
+    link: "/",
+    tags: ["JS", "Mocha/Chai", "Algorithms", "AppSec", "Protocols", "Performance"],
+    github: "https://github.com/brandon-m-navarro/interview-prep",
+    liveDemo: "",
+  },
   {
     id: "3",
     title: "Duolingo Chinese → Anki Bridge",
