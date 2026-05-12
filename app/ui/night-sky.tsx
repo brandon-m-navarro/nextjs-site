@@ -155,8 +155,8 @@ interface NightSkyProps {
  */
 const NightSky: React.FC<NightSkyProps> = ({ bg = "#282A3A" }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
-  const intervalRef = useRef<NodeJS.Timeout>();
+  const animationRef = useRef<number>(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const starsRef = useRef<Particle[]>([]);
   const shootingStarsRef = useRef<ShootingStar[]>([]);
   const pausedRef = useRef<boolean>(false);

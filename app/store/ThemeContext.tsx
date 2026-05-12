@@ -9,7 +9,7 @@ const ThemeContext = createContext({
 });
 
 interface ThemePropsInterface {
-  children?: JSX.Element | Array<JSX.Element>;
+  children?: React.ReactNode | Array<React.ReactNode>;
 }
 
 export function ThemeContextProvider(props: ThemePropsInterface): ReactElement {
