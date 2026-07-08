@@ -10,7 +10,9 @@ import SimpleCarousel from "./ui/simple-carousel";
 export default function Home() {
   return (
     <div className="bg-white dark:bg-[#1a202c] flex flex-col transition-colors items-center justify-items-center min-h-screen pb-20 font-[family-name:var(--font-geist-sans)]">
-      <NightSky bg="#282A3A" />
+      <div>
+        <NightSky bg="#282A3A" />
+      </div>
       <Mountains>
         <div className="absolute flex flex-col sm:flex-row items-center justify-center top-10 sm:top-28 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl">
           {/* Image Container */}
