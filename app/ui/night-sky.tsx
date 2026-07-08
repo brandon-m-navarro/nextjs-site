@@ -376,7 +376,7 @@ const NightSky: React.FC<NightSkyProps> = ({ bg = "#282A3A" }) => {
       style={{
         display: "block",
         position: "absolute",
-        top: 0,
+        top: 71,
         left: 0,
         width: "100vw",
         height: "600px",
