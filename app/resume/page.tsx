@@ -169,13 +169,10 @@ export default function ResumePage() {
                           <div className="">
                             <SkillRating
                               rating={skill.rating}
-                              backgroundColor={clsx({
-                                "bg-skillBackgroundLight": !getIsDark(),
-                                "bg-skillBackgroundDark": getIsDark(),
-                              })}
+                              backgroundColor="bg-[rgb(141, 157, 167)]"
                               fillColor={clsx({
-                                "bg-skillFillLight": !getIsDark(),
-                                "bg-skillFillDark": getIsDark(),
+                                "bg-[rgb(29, 33, 35)]": !getIsDark(),
+                                "bg-[rgb(134, 70, 124)]": getIsDark(),
                               })}
                             />
                           </div>
@@ -362,7 +359,7 @@ export default function ResumePage() {
 
               <div className="flex flex-col justify-around ml-[12px]">
                 <button
-                  className="flex items-center dark:bg-night bg-slate-300 box-border p-[4px] pointer-events-auto"
+                  className="flex items-center dark:bg-[#020916] bg-slate-300 box-border p-[4px] pointer-events-auto"
                   onClick={() => {
                     window
                       ?.open(
@@ -389,7 +386,7 @@ export default function ResumePage() {
                 </button>
 
                 <button
-                  className="flex items-center dark:bg-night bg-slate-300 box-border p-[4px]"
+                  className="flex items-center dark:bg-[#020916] bg-slate-300 box-border p-[4px]"
                   onClick={() => {
                     window
                       ?.open(

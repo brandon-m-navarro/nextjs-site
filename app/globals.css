@@ -4,6 +4,9 @@
 :root {
   --color-background: #ffffff;
   --color-foreground: #171717;
+
+
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -127,35 +130,6 @@ body.modal-open .image-modal {
 }
 
 @theme {
-
-
   --color-background: "var(--background)";
   --color-foreground: "var(--foreground)";
-
-  --color-green: "rgb(129, 169, 136)";
-  --color-greenHover: "rgb(129, 169, 136, 0.5)";
-
-  --color-headerHover: "rgb(53, 54, 74, .20)";
-
-  --color-arsenic: "rgb(53, 54, 74)";
-
-  --color-mask: "rgb(0, 0, 0, 0.25)";
-  --color-maskDarker: "rgb(0, 0, 0, 0.5)";
-
-  --color-dayOrange: "#FF3205";
-  --color-white20: "rgba(255, 255, 255, 0.2)";
-
-  --color-nightGold: "rgba(255, 239, 203, 1)";
-  --color-night: "#020916";
-  --color-nightSoft: "rgb(53, 54, 74)";
-  --color-nightPurple: "#86467C";
-  --color-nightPurple50: "rgba(134, 70, 124, 0.5)";
-
-  --color-skillBackgroundLight: "rgb(141, 157, 167)";
-  --color-skillFillLight: "rgb(11, 57, 72)";
-
-  --color-skillBackgroundDark: "rgb(141, 157, 167)";
-  --color-skillFillDark: "rgb(134, 70, 124)";
-
-  --color-imageTextWhite: "rgb(255, 274, 255, 0.95)";
 }

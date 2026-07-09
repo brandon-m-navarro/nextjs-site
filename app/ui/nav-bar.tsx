@@ -40,7 +40,7 @@ export default function NavBar() {
             key={link.name}
             href={link.href}
             className={clsx(
-              'relative overflow-hidden h-[42px] leading-[42px] w-[100px] rounded-[5%] text-center cursor-pointer transition-all duration-250 ease-in-out text-black dark:text-white hover:bg-headerHover after:content-[""] after:bottom-0 after:w-3/4 after:h-[2px] after:left-1/2 after:absolute after:top-[calc(100% + -2px)] after:transition-all after:translate-x-[-175%]',
+              'relative overflow-hidden h-[42px] leading-[42px] w-[100px] rounded-[5%] text-center cursor-pointer transition-all duration-250 ease-in-out text-black dark:text-white hover:bg-[rgb(53, 54, 74, .20)] after:content-[""] after:bottom-0 after:w-3/4 after:h-[2px] after:left-1/2 after:absolute after:top-[calc(100% + -2px)] after:transition-all after:translate-x-[-175%]',
               getIsDark() ? "after:bg-[#86467c]" : "after:bg-[#81A988]",
               {
                 "opacity-50": pathname !== link.href,

@@ -42,7 +42,7 @@ export default function Modal({
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
-          <div className="absolute bg-slate-400 dark:bg-night top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-sm max-w-[600px] min-w-[275px] border-black border-[1px] dark:border-white/50">
+          <div className="absolute bg-slate-400 dark:bg-[#020916] top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-sm max-w-[600px] min-w-[275px] border-black border-[1px] dark:border-white/50">
             <div className="border-b-black border-b-[1px] leading-[32px] dark:border-b-white/50 mb-[12px]">
               <h2 className={`p-[12px] ${latoBold.className}`}>{title}</h2>
             </div>

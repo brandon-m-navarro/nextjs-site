@@ -1,4 +1,7 @@
 "use client";
+import ThemeContext from "../store/ThemeContext";
+import { useContext } from "react";
+import clsx from "clsx";
 
 export default function NumberedCard({
   number,
@@ -11,6 +14,7 @@ export default function NumberedCard({
   content: string;
   className?: string;
 }) {
+  const { getIsDark } = useContext(ThemeContext);
   return (
     <div
       className={
@@ -19,7 +23,9 @@ export default function NumberedCard({
         className
       }
     >
-      <span className="!text-dayOrange mb-[12px] text-center text-[28px] h-[32px] dark:!text-nightGold">
+      <span className={`mb-[12px] text-center text-[28px] h-[32px] 
+        ${!getIsDark() ? "text-[#FF3205]":"text-[rgba(255, 239, 203, 1)"}
+        `}>
         {number}
       </span>
       <span className="font-semibold text-center text-[20px] whitespace-nowrap h-[28px] mb-[12px]">
