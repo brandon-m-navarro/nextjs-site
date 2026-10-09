@@ -20,8 +20,21 @@ interface Project {
 
 // Create Projects
 const projects: Project[] = [
-    {
+  {
     id: "1",
+    title: "Fresh",
+    description: "",
+    longDescription: "A NextJS app to help users scan their grocery receipts to help track what's in their pantry, upcoming expiration dates, changes in prices, help construct grocery lists, and recommend possible recipes at meal times.",
+    image: "/fresh.png",
+    mobileImage: "/fresh.png",
+    link: "/",
+    tags: ["NextJS", "Vercel AI SDK", "Azure Document Intelligence"],
+    github: "https://github.com/brandon-m-navarro/grocery-tracker",
+    liveDemo: "https://fresh.bnav.dev/",
+    demoLabel: "View Live Demo →"
+  },
+  {
+    id: "2",
     title: "SSO App Dashboard",
     description: "",
     longDescription: "This app serves as an OIDC provider for my todo and dashboard applications. Creating this required a lot of research, reading through multiple RFCs (6749, 6750, 9700) to learn about Authorization Flow, PKCE, OIDC, and OIDC Providers. I iterated through various implementations, trying out both Auth0 and Okta as identity providers with next-auth. Unhappy with the limitations (and running into paywalls), I moved onto self-hosted solutions. I set up a central authority server using KeyCloak and Docker, but didn't want to commit to an Amazon EC2 instance for such a small project. After a bit more research, I decided to try the better-auth framework, as it had a beta version of an OIDC Provider plugin. Working with early versions of that plugin meant manually implementing the Authorization Flow to securely fetch from the user token endpoint. Since that implementation, better-auth has simplified the process by including .well-known discovery endpoints.",
@@ -34,7 +47,7 @@ const projects: Project[] = [
     demoLabel: "View Live Demo →"
   },
   {
-    id: "2",
+    id: "3",
     title: "Todo App",
     description: "",
     longDescription: "A full-stack web application built with Next.js. The app allows for both public and private projects, using my SSO solution to provide authentication. This project served as a great learning experience, as its development was not guided by any tutorials; any questions that arose were solved by reading through documentation. This app originally didn't have users, authentication, or use ORM for database interactions, so it also offered good insight into database migration, and how much easier an ORM makes things.",
@@ -46,8 +59,8 @@ const projects: Project[] = [
     liveDemo: "https://todo.bnav.dev/",
     demoLabel: "View Live Demo →"
   },
-    {
-    id: "10",
+  {
+    id: "4",
     title: "Interview Prep",
     description: "",
     longDescription: "A collection of coding and concept problems I've recently completed. This project is structured in a way that allows other developers to use it as a learning/practice tool. While most of these problems are common across different sites, all coding solutions were implemented by me. The solutions contain comments to help provide clarity for why certain algorithms were used, along with their time/space complexity, where appropriate.",
@@ -59,7 +72,7 @@ const projects: Project[] = [
     liveDemo: "",
   },
   {
-    id: "3",
+    id: "5",
     title: "Duolingo Chinese Anki Bridge",
     description: "",
     longDescription: "I enjoy using Duolingo, but not having a dedicated flashcard feature for vocab felt a bit limiting. My tool streamlines the creation of Anki flashcards from your lessons. It complies with Duolingo's TOS by not scraping their copyrighted assets; instead, it extracts the Hanzi characters along with their Pinyin counterpart and English translations, then uses external TTS services to generate new audio. Check out the README on GitHub for a demo of the workflow.",
@@ -71,7 +84,7 @@ const projects: Project[] = [
     liveDemo: "",
   },
   {
-    id: "4",
+    id: "6",
     title: "Portfolio Site",
     description: "",
     longDescription: "This site began as a vanilla JavaScript application, built without any frameworks using basic ES6 classes and CSS. I've since reimplemented the site using React, Typescript, and TailwindCSS. This served as a practical comparison of how simple HTML/JS/CSS has evolved to modern framework-based development.",
@@ -84,7 +97,7 @@ const projects: Project[] = [
     demoLabel: "View Live Demo →"
   },
   {
-    id: "5",
+    id: "7",
     title: "NextJS Dashboard",
     description: "",
     longDescription: "A dashboard application built as my introduction to Next.js, following the official Next.js tutorial. This project served as a hands-on learning experience for modern React frameworks and full-stack development patterns. As a prerequisite, I also completed Vercel's React Foundations course, which covered the fundamentals of React (components, props, state, hooks, along with newer features like Server Components and Suspense). I've since made changes to the app to allow it to interface with my SSO ecosystem.",
@@ -97,7 +110,7 @@ const projects: Project[] = [
     demoLabel: "View Live Demo →"
   },
   {
-    id: "6",
+    id: "8",
     title: "Escape",
     description: "",
     longDescription: "Escape is a family of board games originally developed in 7 weeks for my CS4233: Object-Oriented Analysis & Design term project. This project focused on designing an OO program and working through iterations of new rules, pieces, and board types. Since originally implementing 5 years ago, I've recently returned to the project to refresh what I'd learned in a 4000-level course at WPI and make a number of improvements. The key improvements include: eliminating the use of raw types, fixing wildcard capture issues, fixing all failing tests, and creating a visualization tool to more easily inspect initialized boards. It's important to note there is no GUI for this game, so it cannot be played as one would think. The board game concept was used to create a project where OO principles and patterns could be implemented.",
@@ -108,7 +121,7 @@ const projects: Project[] = [
     github: "https://github.com/brandon-m-navarro/escape",
   },
   {
-    id: "7",
+    id: "9",
     title: "Multi-Camera Tele-Nursing Robot (2019 - 2020)",
     description: "",
     longDescription: "This project served as my MQP, WPI's version of a senior capstone. Worked within a team of 6 (with multiple advisors) to conduct a study which explored autonomous camera control and selection on a TRINA robot using a VR headset. By reading the inertial measurement unit (IMU) data from the VR headset (through Unity and GStreamer) and passing that data to Python and C++ scripts, we were able to interface with ROS to control TRINA in real-time. If on desktop, click the button in the top-right of the adjacent image to expand the poster we submitted that summarizes our project.",
@@ -121,7 +134,7 @@ const projects: Project[] = [
     demoLabel: "View Paper →"
   },
   {
-    id: "8",
+    id: "10",
     title: "Mathematics Tutoring Center at NUST (2019)",
     description: "",
     longDescription: "This project served as my interactive qualifying project, allowing me to work within an interdisciplinary team to help address a need that existed at the intersection of science and society. Our team of 4 was tasked with creating and implementing mathematics e-learning modules at the Namibia University of Science and Technology. Through interviews and surveys with university staff and students, we were able to to create and refine these modules, providing an effective supplemental learning tool. My main contribution to the project was creating the modules using ASSISTments, an e-learning platform developed by a WPI professor. Writing responsibilities for the final paper were shared equally among the team, with myself acting as the primary editor.",
@@ -134,7 +147,7 @@ const projects: Project[] = [
     demoLabel: "View Paper →"
   },
   {
-    id: "9",
+    id: "11",
     title: "TTB Label Submission Application (2018)",
     description: "",
     longDescription: "Worked within a team of 8 to develop an application for the Alcohol and Tobacco Tax and Trade Bureau (TTB) to facilitate the process of submitting and reviewing new products; this was the most work-intensive class I took at WPI. Over 7 weeks, the course simulated what it was like being a part of a software development team following Agile methodologies. This project required daily standup meetings in order to efficiently delegate work and meet iteration deadlines. My assigned role was software engineer/assistant document analyst, meaning I was involved in creating UML/sequence diagrams, documenting the codebase, helping design the UI, and various code contributions. The course culminated in presenting our application to a panel of judges, comprised of professors and government officials.",
@@ -191,8 +204,8 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
     return (
       <div>
         {/* Backdrop */}
-        <div onClick={() => {onToggle(project.id)}}
-             className="fixed inset-0 bg-black bg-opacity-50 z-50" />
+        <div onClick={() => { onToggle(project.id) }}
+          className="fixed inset-0 bg-black bg-opacity-50 z-50" />
 
         {/* Expanded Card */}
         <div className="fixed top-8 left-8 right-8 bottom-8 md:top-16 md:left-16 md:right-16 md:bottom-16 bg-white dark:bg-[#2d3748] rounded-xl shadow-2xl z-50 flex flex-col sm:flex-row overflow-hidden">
@@ -378,7 +391,7 @@ function ProjectCard({ project, isExpanded, onToggle }: ProjectCardProps) {
             rel="noopener noreferrer"
             className="block mt-3 text-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium"
           >
-          {project.demoLabel}
+            {project.demoLabel}
           </a>
         )}
       </div>
