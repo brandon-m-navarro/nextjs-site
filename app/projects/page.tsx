@@ -24,7 +24,7 @@ const projects: Project[] = [
     id: "1",
     title: "Fresh",
     description: "",
-    longDescription: "A NextJS app to help users scan their grocery receipts to help track what's in their pantry, upcoming expiration dates, changes in prices, help construct grocery lists, and recommend possible recipes at meal times.",
+    longDescription: "A NextJS app to help users scan their grocery receipts to help track what's in their pantry, upcoming expiration dates, changes in prices, help construct grocery lists, and recommend possible recipes at meal times. Utilizes Azure Document Intelligence for OCR and Vercel AI SDK to leverage LLMs to create pantry items from grocery receipt shorthand.",
     image: "/fresh.png",
     mobileImage: "/fresh.png",
     link: "/",
